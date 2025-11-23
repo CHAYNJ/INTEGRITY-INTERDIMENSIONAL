@@ -1,0 +1,55 @@
+# INTEGRITY INTERDIMENSIONAL — Master Index Verification Checklist
+
+This checklist ensures that all links, placeholders, and extended descriptions in `index.html` are functional and complete.
+
+## 1️⃣ Folder Links
+- [ ] About: `about/about_extended_description.md`
+- [ ] Children: `children/children_extended_description.md`
+- [ ] Codex: `codex/codex_extended_description.md`
+- [ ] Evokara × Ever Chaynj: `evokara-ever-chaynj/evokara_ever_chaynj_extended_description.md`
+- [ ] Folder Structure: `folderstructurefororganization/folderstructurefororganization_extended_description.md`
+- [ ] Repository Placeholders: `folder_placeholders/repository_placeholders_extended_description.md`
+- [ ] Global CSS: `globalcss/globalcss_extended_description.md`
+- [ ] Glyphs: `glyphs/glyphs_extended_description.md`
+- [ ] Life of Coherence Virus: `lcvirus/lcvirus_extended_description.md`
+- [ ] Maps: `maps/maps_extended_description.md`
+- [ ] Rituals: `rituals/rituals_extended_description.md`
+- [ ] Scrolls: `scrolls/scrolls_extended_description.md`
+- [ ] Style: `style/style_extended_description.md`
+- [ ] Verification Checklist: `verification_checklist_extended_description.md`
+
+## 2️⃣ Placeholder Files
+- [ ] about/placeholder.md
+- [ ] children/placeholder.md
+- [ ] codex/placeholder.md
+- [ ] evokara-ever-chaynj/placeholder.md
+- [ ] folderstructurefororganization/placeholder.md
+- [ ] folder_placeholders/placeholder.md
+- [ ] globalcss/placeholder.md
+- [ ] glyphs/placeholder.md
+- [ ] lcvirus/placeholder.md
+- [ ] maps/placeholder.md
+- [ ] rituals/placeholder.md
+- [ ] scrolls/placeholder.md
+- [ ] style/placeholder.md
+
+## 3️⃣ Folder Names Verification
+- [ ] Confirm all folder names match exactly with `index.html` references (case-sensitive).
+- [ ] Replace spaces in folder names with underscores or hyphens for consistent linking.
+
+## 4️⃣ Extended Description Content Check
+- [ ] Open each extended description file and confirm readable content.
+- [ ] Verify proper formatting and completeness.
+
+## 5️⃣ Navigation Test
+- [ ] Open `index.html` in a browser.
+- [ ] Click all folder links and placeholder links.
+- [ ] Confirm all links open the correct file without errors.
+
+## 6️⃣ Style Check (Optional)
+- [ ] Ensure `style/global.css` is loaded correctly.
+- [ ] Confirm inline styling does not conflict with global CSS.
+
+## Notes
+- Update this checklist whenever new folders or extended descriptions are added.
+- Use this as a **reference guide** for repository maintenance and navigation verification.
