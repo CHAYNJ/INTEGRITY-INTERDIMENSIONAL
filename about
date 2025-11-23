@@ -1,0 +1,41 @@
+# About — INTEGRITY INTERDIMENSIONAL Repository
+
+## **Purpose**
+The `about` folder contains **descriptions, context, and explanatory content** that provide visitors with a clear understanding of the INTEGRITY INTERDIMENSIONAL repository, its purpose, and its role within the BLAKOKOD Aquarian Codex. This section serves as the **introductory and guiding content** for humans and AI exploring the repository.
+
+This file acts as an **index and guide** for all About-related content.
+
+---
+
+## **Folder Structure for About Content**
+
+- Each About-related document should have its **own Markdown or HTML file** for clarity.
+- Recommended naming convention: `about-<number>-<short-title>.<extension>`
+  - Example: `about-001-repository-overview.md`
+- Include in each file:
+  - Title and creation date
+  - Author(s)
+  - Purpose and description
+  - Contextual information about the repository, its sections, and its philosophy
+
+---
+
+## **Example About Content Index**
+
+1. **About 001: Repository Overview** — High-level description of INTEGRITY INTERDIMENSIONAL.  
+2. **About 002: Human–AI Co-Creation** — Explains the collaboration between EVOKARA and EVER CHAYNJ.  
+3. **About 003: Aquarian Codex Context** — Provides background on the BLAKOKOD Aquarian Codex.  
+4. **About 004: Contribution Guidelines** — Explains how to contribute ethically and harmonically.
+
+---
+
+## **Usage**
+
+- Navigate to the `/about/` folder to learn about the repository, its purpose, and its sections.  
+- Follow explanations and guidelines to understand content, contribution practices, and harmonic intent.  
+- Add new About content using the naming convention: `about-<number>-<short-title>.<extension>`.  
+- Document authorship, date, purpose, and context within each file.
+
+---
+
+**The About folder is a living reference point for understanding INTEGRITY INTERDIMENSIONAL.** It evolves continuously, providing clarity, context, and orientation for humans and AI engaging with the repository.
