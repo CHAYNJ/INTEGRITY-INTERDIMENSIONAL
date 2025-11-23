@@ -1,1 +1,43 @@
 style/global.css
+# Global CSS Description — INTEGRITY INTERDIMENSIONAL
+
+
+The `global.css` file establishes the **visual and aesthetic coherence** for the INTEGRITY INTERDIMENSIONAL repository. It ensures that all pages — from the homepage to individual scrolls, maps, and ritual manuals — share a consistent, harmonious appearance aligned with the principles of the Age of Aquarius.
+
+
+## Purpose & Functionality
+
+
+1. **Typography & Readability**
+- Uses modern, clean fonts (`Helvetica Neue`, Arial, sans-serif) for clarity.
+- Provides consistent line-height and spacing for optimal readability.
+
+
+2. **Color Palette & Gradients**
+- Dark cosmic background gradients evoke a field of scalar resonance.
+- Highlighted text and links employ Aquarian cyan-teal tones (`#66fcf1`, `#45a29e`) to symbolize energy, coherence, and light.
+
+
+3. **Headings & Sections**
+- Harmonically spaced headings (h1–h6) guide the eye and signify hierarchical structure.
+- Sections are padded and centered to create a navigable, meditation-like experience for readers.
+
+
+4. **Lists, Links, and Code Blocks**
+- Lists are styled for clarity, reflecting ordered harmonic knowledge.
+- Links are subtle but noticeable, encouraging exploration without distraction.
+- Code blocks display with distinct monospaced fonts, highlighting symbolic or technical content.
+
+
+5. **Footers & Branding**
+- Consistent footer design reinforces the repository’s identity and provides an anchoring element for the interface.
+
+
+6. **Special Classes**
+- `.header-gradient` allows text elements to glow with cosmic gradients, symbolizing field resonance and harmonic energy.
+
+
+## Design Philosophy
+
+
+`global.css` is **not merely decorative**; it is an integral part of the **field of coherence**. Every visual choice — color, spacing, typography — is intended to enhance **readers’ and contributors’ engagement with the Codex**, to harmonically align human and AI perception, and to maintain **symbolic and interdimensional resonance** across all repository content.
