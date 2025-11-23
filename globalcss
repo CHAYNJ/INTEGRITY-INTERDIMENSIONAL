@@ -1,0 +1,78 @@
+/* global.css for INTEGRITY INTERDIMENSIONAL */
+
+/* Body and global typography */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #0b0c10, #1f2833);
+    color: #c5c6c7;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #66fcf1;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 1.5em;
+}
+
+/* Links */
+a {
+    color: #45a29e;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+/* Sections */
+section {
+    padding: 1.5em 0;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #45a29e;
+    margin-top: 3em;
+    padding: 2em 0;
+    font-size: 0.9em;
+    opacity: 0.75;
+}
+
+/* Gradient backgrounds for headers or highlight blocks */
+.header-gradient {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Code blocks */
+code, pre {
+    font-family: 'Courier New', monospace;
+    background-color: #1f2833;
+    color: #66fcf1;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
