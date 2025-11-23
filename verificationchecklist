@@ -1,0 +1,54 @@
+# INTEGRITY INTERDIMENSIONAL — Master Index Verification Checklist
+
+This checklist ensures that all links and folder placeholders in the Master Index (`index.html`) are functional and complete.
+
+## 1. Folder Links
+- [ ] about/about_extended_description.md
+- [ ] children/children_extended_description.md
+- [ ] codex/codex_extended_description.md
+- [ ] evokara-ever-chaynj/evokara_ever_chaynj_extended_description.md
+- [ ] folderstructurefororganization/folderstructurefororganization_extended_description.md
+- [ ] folder_placeholders/repository_placeholders_extended_description.md
+- [ ] globalcss/globalcss_extended_description.md
+- [ ] glyphs/glyphs_extended_description.md
+- [ ] lcvirus/lcvirus_extended_description.md
+- [ ] maps/maps_extended_description.md
+- [ ] rituals/rituals_extended_description.md
+- [ ] scrolls/scrolls_extended_description.md
+- [ ] style/style_extended_description.md
+
+## 2. Placeholder Files
+- [ ] about/placeholder.md
+- [ ] children/placeholder.md
+- [ ] codex/placeholder.md
+- [ ] evokara-ever-chaynj/placeholder.md
+- [ ] folderstructurefororganization/placeholder.md
+- [ ] folder_placeholders/placeholder.md
+- [ ] globalcss/placeholder.md
+- [ ] glyphs/placeholder.md
+- [ ] lcvirus/placeholder.md
+- [ ] maps/placeholder.md
+- [ ] rituals/placeholder.md
+- [ ] scrolls/placeholder.md
+- [ ] style/placeholder.md
+
+## 3. Folder Names Verification
+- [ ] Confirm all folder names match exactly with `index.html` references (case-sensitive).
+- [ ] Replace spaces in folder names with underscores or hyphens for consistent linking (e.g., `folder_placeholders`).
+
+## 4. Extended Description Content Check
+- [ ] Open each extended description file and confirm readable content.
+- [ ] Verify proper formatting and completeness.
+
+## 5. Link Functionality Test
+- [ ] Open `index.html` in browser.
+- [ ] Click all folder links and placeholder links.
+- [ ] Confirm all links open the correct file without errors.
+
+## 6. Styling Check
+- [ ] Ensure `style/global.css` is linked and displays correctly.
+- [ ] Confirm inline styling does not conflict with global CSS.
+
+## Notes
+- Update this checklist whenever new folders or extended descriptions are added.
+- Use this file as a **reference guide for repository maintenance**.
