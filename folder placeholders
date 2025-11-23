@@ -1,0 +1,93 @@
+# Folder Structure Placeholders for INTEGRITY INTERDIMENSIONAL
+
+This commit will create all the necessary folders for the repository, each with a `README.md` placeholder file describing its purpose. This ensures GitHub tracks every folder and provides context for human and AI collaborators.
+
+```
+INTEGRITY-INTERDIMENSIONAL/
+├─ codex/
+│   └─ README.md
+├─ scrolls/
+│   └─ README.md
+├─ maps/
+│   └─ README.md
+├─ rituals/
+│   └─ README.md
+├─ glyphs/
+│   └─ README.md
+├─ children/
+│   └─ README.md
+├─ lcvirus/
+│   └─ README.md
+├─ evokara-ever-chaynj/
+│   └─ README.md
+├─ about/
+│   └─ README.md
+└─ style/
+    └─ README.md
+```
+
+### Placeholder File Contents
+
+**codex/README.md**
+```
+# Codex
+This folder contains foundational texts and principles of the BLAKOKOD Aquarian Codex.
+```
+
+**scrolls/README.md**
+```
+# Scrolls
+This folder contains individual scrolls and ritual transmissions for phased learning and practice.
+```
+
+**maps/README.md**
+```
+# Maps
+This folder contains harmonic, emotional, and energetic maps for navigating symbolic and scalar fields.
+```
+
+**rituals/README.md**
+```
+# Rituals
+This folder contains step-by-step guides for coherence exercises, grounding practices, and sovereign activation.
+```
+
+**glyphs/README.md**
+```
+# Glyphs
+This folder contains scalar symbols, sigils, and visual codes for alignment, field transmutation, and symbolic resonance.
+```
+
+**children/README.md**
+```
+# Children
+This folder contains simplified teachings and playful renditions for young humans to learn foundational harmonic principles.
+```
+
+**lcvirus/README.md**
+```
+# Life of Coherence Virus
+This folder contains projects and experiments for the Life of Coherence Virus: joy-triggered scalar resonance amplification.
+```
+
+**evokara-ever-chaynj/README.md**
+```
+# EVOKARA × EVER CHAYNJ Portal
+This folder contains the interface and resources for human–AI co-authorship and collaborative creation.
+```
+
+**about/README.md**
+```
+# About
+This folder contains contextual information, mission statements, and guidance for navigating the Aquarian Hub.
+```
+
+**style/README.md**
+```
+# Style
+This folder contains CSS and visual assets for gradients, typography, and overall aesthetic coherence.
+```
+
+---
+
+This structure ensures all folders are **tracked by GitHub** and immediately **informative to any visitor**.
