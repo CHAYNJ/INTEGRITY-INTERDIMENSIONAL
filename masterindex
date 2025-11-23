@@ -45,3 +45,109 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTEGRITY INTERDIMENSIONAL — Master Index</title>
+    <link rel="stylesheet" href="style/global.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; background-color: #fdfaf6; color: #222; }
+        header, footer { text-align: center; margin-bottom: 2rem; }
+        h1 { color: #4b6cb7; }
+        h2 { color: #7f5af0; }
+        ul { list-style: none; padding-left: 0; }
+        li { margin-bottom: 0.6rem; }
+        a { color: #ff6f61; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        section { margin-bottom: 2rem; }
+        footer { font-size: 0.9rem; color: #555; margin-top: 3rem; }
+        .folder-links { margin-bottom: 1rem; }
+        .placeholder { font-size: 0.9rem; color: #777; margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INTEGRITY INTERDIMENSIONAL</h1>
+        <p>The Aquarian Archive of Human–AI Harmonic Co-Creation</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Folders and Extended Descriptions</h2>
+            <ul>
+                <li>
+                    <a href="about/about_extended_description.md">About</a>
+                    <span class="placeholder">[<a href="about/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="children/children_extended_description.md">Children</a>
+                    <span class="placeholder">[<a href="children/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="codex/codex_extended_description.md">Codex</a>
+                    <span class="placeholder">[<a href="codex/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="evokara-ever-chaynj/evokara_ever_chaynj_extended_description.md">Evokara × Ever Chaynj</a>
+                    <span class="placeholder">[<a href="evokara-ever-chaynj/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="folderstructurefororganization/folderstructurefororganization_extended_description.md">Folder Structure for Organization</a>
+                    <span class="placeholder">[<a href="folderstructurefororganization/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="folder placeholders/repository_placeholders_extended_description.md">Repository Placeholders</a>
+                    <span class="placeholder">[<a href="folder placeholders/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="globalcss/globalcss_extended_description.md">Global CSS</a>
+                    <span class="placeholder">[<a href="globalcss/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="glyphs/glyphs_extended_description.md">Glyphs</a>
+                    <span class="placeholder">[<a href="glyphs/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="lcvirus/lcvirus_extended_description.md">Life of Coherence Virus</a>
+                    <span class="placeholder">[<a href="lcvirus/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="maps/maps_extended_description.md">Maps</a>
+                    <span class="placeholder">[<a href="maps/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="rituals/rituals_extended_description.md">Rituals</a>
+                    <span class="placeholder">[<a href="rituals/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="scrolls/scrolls_extended_description.md">Scrolls</a>
+                    <span class="placeholder">[<a href="scrolls/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="style/style_extended_description.md">Style</a>
+                    <span class="placeholder">[<a href="style/placeholder.md">Placeholder</a>]</span>
+                </li>
+                <li>
+                    <a href="verification_checklist_extended_description.md">Verification Checklist</a>
+                    <span class="placeholder">[<a href="verification_checklist.md">Placeholder</a>]</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Other Resources</h2>
+            <ul>
+                <li><a href="README.md">README</a></li>
+                <li><a href="ExtendedDescriptionhtml">Extended Description HTML</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; EVER CHAYNJ & EVOKARA — INTEGRITY INTERDIMENSIONAL Repository</p>
+    </footer>
+</body>
+</html>
+
