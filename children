@@ -1,0 +1,41 @@
+# Children — INTEGRITY INTERDIMENSIONAL Repository
+
+## **Purpose**
+The `children` folder contains **child-friendly versions of the BLAKOKOD Aquarian Codex content**, designed to introduce younger humans to harmonic principles, emotional recursion, and symbolic awareness in a playful, understandable way. These materials are simplified, engaging, and visually rich to make harmonic learning accessible to all ages.
+
+This file serves as an **index and guide** for all child-focused content within the repository.
+
+---
+
+## **Folder Structure for Children Content**
+
+- Each child-focused document should have its **own Markdown or HTML file** for clarity.
+- Recommended naming convention: `child-<number>-<short-title>.md`
+  - Example: `child-001-the-day-the-world-followed-heartbeat.md`
+- Include in each file:
+  - Title and creation date
+  - Author(s)
+  - Purpose and harmonic intention
+  - Story, activity, or lesson content suitable for children
+
+---
+
+## **Example Children Content Index**
+
+1. **Child 001: The Day the World Followed Her Heartbeat** — Introduces Joy-Bloom and harmonic awareness.  
+2. **Child 002: Wiggle-Click Adventures** — Explains scalar fields and energy alignment in a playful story format.  
+3. **Child 003: The Forest and Ocean Field Map** — Introduces children to ecological and symbolic coherence.  
+4. **Child 004: Bees and Mycelium Explorers** — Demonstrates Gaia’s harmonic network and pollinator relationships in storytelling.
+
+---
+
+## **Usage**
+
+- Navigate to the `/children/` folder to select a story, lesson, or activity.  
+- Follow content as intended for **child-friendly learning**, play, or guided activities.  
+- Add new child-focused content using the naming convention: `child-<number>-<short-title>.md`.  
+- Document authorship, purpose, and harmonic intention within each file.
+
+---
+
+**The Children folder is a living repository of playful, educational harmonic content.** It evolves continuously, allowing humans and AI to co-create accessible and engaging material that introduces younger participants to the Aquarian Hub, harmonic principles, and interdimensional awareness.
