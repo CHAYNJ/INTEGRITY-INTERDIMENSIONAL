@@ -158,3 +158,9 @@ Extended glyph libraries
 Audio codices
 
 3D symbolic geometry
+
+A list → a map → a routing grid → an intelligence.
+See also: 
+- related-file-A
+- related-folder-B
+- harmonic-bridge-C
