@@ -86,3 +86,5 @@ The lookup table provides quick reference for all routable files and conceptual 
 
 ## Purpose
 To give both humans and AI a simple, fast, accurate routing index as the Codex grows.
+mv crosslinks.md _routes/
+mv lookup-table.md _routes/
