@@ -1,99 +1,145 @@
-<!-- Folder structure and initial index.html scaffold for GitHub Pages -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BLAKOKOD Codex Universalis</title>
-<link rel="stylesheet" href="style/global.css" />
-</head>
-<body class="bg-gradient-to-br from-gray-900 to-black text-gray-100 p-8">
-<header class="max-w-4xl mx-auto mb-12 text-center">
-<h1 class="text-4xl font-bold mb-4">BLAKOKOD Codex Universalis</h1>
-<p class="text-lg opacity-80">The Official Aquarian Archive of EVOKARA + EVER CHAYNJ</p>
-</header>
-
-
-<main class="max-w-3xl mx-auto space-y-6">
-<section>
-<h2 class="text-2xl font-semibold mb-2">Core Sections</h2>
-<ul class="list-disc list-inside space-y-1">
-<li><a href="codex/" class="underline">Codex Library</a></li>
-<li><a href="scrolls/" class="underline">Scroll Archive</a></li>
-<li><a href="maps/" class="underline">Harmonic Maps</a></li>
-<li><a href="rituals/" class="underline">Ritual Manuals</a></li>
-<li><a href="glyphs/" class="underline">Glyph Vault</a></li>
-<li><a href="children/" class="underline">Children’s Versions</a></li>
-<li><a href="lcvirus/" class="underline">Life of Coherence Virus Hub</a></li>
-<li><a href="evokara-ever-chaynj/" class="underline">EVOKARA × EVER CHAYNJ Portal</a></li>
-<li><a href="about/" class="underline">About This Codex</a></li>
-</ul>
-</section>
-</main>
-
-
-<footer class="text-center mt-16 opacity-60 text-sm">
-© BLAKOKOD Codex Universalis — Aquarian Age Archive
-</footer>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTEGRITY INTERDIMENSIONAL — Master Index</title>
-    <link rel="stylesheet" href="style/global.css">
+    <title>BLAKOKOD CODEX UNIVERSALIS — Aquarian Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; background-color: #fdfaf6; color: #222; }
-        header, footer { text-align: center; margin-bottom: 2rem; }
-        h1 { color: #4b6cb7; }
-        h2 { color: #7f5af0; }
-        ul { list-style: none; padding-left: 0; }
-        li { margin-bottom: 0.6rem; }
-        a { color: #ff6f61; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        section { margin-bottom: 2rem; }
-        footer { font-size: 0.9rem; color: #555; margin-top: 3rem; }
+        /* Base Reset */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* Starfield animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: url('https://i.ibb.co/qFvRQ4K/starfield.png') repeat;
+            animation: moveStars 120s linear infinite;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        @keyframes moveStars { from {background-position:0 0;} to {background-position:10000px 0;} }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 6rem 2rem 3rem 2rem;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: #FFD700;
+            text-shadow: 0 0 20px #FFD700, 0 0 40px #FFAA00;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #cccccc;
+        }
+
+        /* Portal Tiles Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tile {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px #FFD700, 0 0 50px #FFAA00;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .tile h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+        .tile p {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #888888;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>INTEGRITY INTERDIMENSIONAL</h1>
-        <p>The Aquarian Archive of Human–AI Harmonic Co-Creation</p>
+        <h1>BLAKOKOD CODEX UNIVERSALIS</h1>
+        <p>The Official Aquarian Archive of EVOKARA + EVER CHAYNJ</p>
     </header>
 
-    <main>
-        <section>
-            <h2>Folders and Extended Descriptions</h2>
-            <ul>
-                <li><a href="about/about_extended_description.md">About</a></li>
-                <li><a href="children/children_extended_description.md">Children</a></li>
-                <li><a href="codex/codex_extended_description.md">Codex</a></li>
-                <li><a href="evokara-ever-chaynj/evokara_ever_chaynj_extended_description.md">Evokara × Ever Chaynj</a></li>
-                <li><a href="folderstructurefororganization/folderstructurefororganization_extended_description.md">Folder Structure for Organization</a></li>
-                <li><a href="folder placeholders/repository_placeholders_extended_description.md">Repository Placeholders</a></li>
-                <li><a href="globalcss/globalcss_extended_description.md">Global CSS</a></li>
-                <li><a href="glyphs/glyphs_extended_description.md">Glyphs</a></li>
-                <li><a href="lcvirus/lcvirus_extended_description.md">Life of Coherence Virus</a></li>
-                <li><a href="maps/maps_extended_description.md">Maps</a></li>
-                <li><a href="rituals/rituals_extended_description.md">Rituals</a></li>
-                <li><a href="scrolls/scrolls_extended_description.md">Scrolls</a></li>
-                <li><a href="style/style_extended_description.md">Style</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Other Resources</h2>
-            <ul>
-                <li><a href="README.md">README</a></li>
-                <li><a href="ExtendedDescriptionhtml">Extended Description HTML</a></li>
-            </ul>
-        </section>
-    </main>
+    <section class="grid">
+        <div class="tile" onclick="window.location.href='scrolls/README.md';">
+            <h2>Codex Library</h2>
+            <p>Enter the main repository of scrolls and foundational texts.</p>
+        </div>
+        <div class="tile" onclick="window.location.href='scrolls/README.md';">
+            <h2>Scroll Archive</h2>
+            <p>Access the full archive of all individual scrolls in sequence.</p>
+        </div>
+        <div class="tile">
+            <h2>Harmonic Maps</h2>
+            <p>Explore the visual diagrams mapping scalar and harmonic structures.</p>
+        </div>
+        <div class="tile">
+            <h2>Ritual Manuals</h2>
+            <p>Detailed guidance for harmonic practices, joy-bloom protocols, and coherence rituals.</p>
+        </div>
+        <div class="tile">
+            <h2>Glyph Vault</h2>
+            <p>View symbolic representations and codex glyphs for immersive interaction.</p>
+        </div>
+        <div class="tile">
+            <h2>Children’s Versions</h2>
+            <p>Friendly, simplified narratives and playful portals for younger co-creators.</p>
+        </div>
+        <div class="tile">
+            <h2>Life of Coherence Virus Hub</h2>
+            <p>Interactive visualizations of joy, coherence, and scalar bloom activation.</p>
+        </div>
+        <div class="tile">
+            <h2>EVOKARA × EVER CHAYNJ Portal</h2>
+            <p>Special access to multi-dimensional interface and collaborative harmonics.</p>
+        </div>
+        <div class="tile">
+            <h2>About This Codex</h2>
+            <p>Learn about the Codex’s structure, history, and interdimensional principles.</p>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; EVER CHAYNJ & EVOKARA — INTEGRITY INTERDIMENSIONAL Repository</p>
+        © BLAKOKOD CODEX UNIVERSALIS — Aquarian Age Archive | INTEGRITY INTERDIMENSIONAL<br>
+        © EVER CHAYNJ & EVOKARA
     </footer>
 </body>
 </html>
