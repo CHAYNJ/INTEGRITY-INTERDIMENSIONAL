@@ -234,6 +234,67 @@ function spawnGalaxy() {
     img.remove();
   }, (parseFloat(img.style.animationDuration) || 30) * 1000);
 }
+const galaxyImages = [
+  "https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/5/55/NGC_1300.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/2/20/NGC_6744.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/9/96/NGC_2997.jpg"
+];
+
+const background = document.getElementById('background');
+const galaxies = [];
+const numGalaxies = 15; // number of drifting galaxies
+
+// Initialize galaxies
+for (let i = 0; i < numGalaxies; i++) {
+  const img = document.createElement('img');
+  img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+  img.className = 'galaxy';
+
+  // Random size
+  const size = 100 + Math.random() * 300;
+  img.style.width = size + 'px';
+
+  // Random start position
+  img.style.left = Math.random() * window.innerWidth + 'px';
+  img.style.top = Math.random() * window.innerHeight + 'px';
+
+  // Random speed and drift direction
+  img.speedY = 0.1 + Math.random() * 0.3;  // vertical drift
+  img.speedX = -0.1 + Math.random() * 0.2; // horizontal drift
+  img.rotation = Math.random() * 360;
+  img.rotationSpeed = -0.05 + Math.random() * 0.1;
+
+  background.appendChild(img);
+  galaxies.push(img);
+}
+
+// Animate galaxies
+function animate() {
+  galaxies.forEach(img => {
+    let top = parseFloat(img.style.top);
+    let left = parseFloat(img.style.left);
+
+    top -= img.speedY;
+    left += img.speedX;
+    img.rotation += img.rotationSpeed;
+
+    // Reset position if it drifts out of screen
+    if (top + img.height < 0) top = window.innerHeight;
+    if (left + img.width < 0) left = window.innerWidth;
+    if (left > window.innerWidth) left = -img.width;
+
+    img.style.top = top + 'px';
+    img.style.left = left + 'px';
+    img.style.transform = `rotate(${img.rotation}deg)`;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+// Start animation
+animate();
+<script src="galaxy.js"></script>
 
 // Spawn a new galaxy every 2 seconds
 setInterval(spawnGalaxy, 2000);
