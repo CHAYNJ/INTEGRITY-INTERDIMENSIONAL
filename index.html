@@ -1773,3 +1773,22 @@ function createStar() {
 // Create all stars
 for (let i = 0; i < starCount; i++) createStar();
 </script>
+<script>
+// Array of public domain galaxy images
+const galaxyImages = [
+  "https://upload.wikimedia.org/wikipedia/commons/1/1a/Milky_Way_Galaxy.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/9/99/NGC_1300_HST.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_4414.jpg"
+];
+
+const background = document.getElementById("cosmos-background");
+
+galaxyImages.forEach((url, index) => {
+  const layer = document.createElement("div");
+  layer.classList.add("cosmos-layer");
+  layer.style.backgroundImage = `url('${url}')`;
+  layer.style.animationDuration = `${50 + index*20}s`; // Different speed for parallax
+  layer.style.zIndex = -2 - index;
+  background.appendChild(layer);
+});
+</script>
