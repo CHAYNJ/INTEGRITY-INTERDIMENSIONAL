@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EVOKARA PORTAL DASHBOARD</title>
-  <style>
-    body {
-      margin: 0;
-      background: radial-gradient(circle at center, #0d0d0d, #000000 70%);
-      font-family: Arial, sans-serif;
-      color: white;
-      overflow-x: hidden;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 3rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px #8afcff;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1500px;
-      margin: auto;
-    }
-    .portal {
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: 0.25s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      backdrop-filter: blur(6px);
-    }
-    .portal:hover {
-      background: rgba(0, 255, 255, 0.1);
-      border-color: #00f2ff;
-      box-shadow: 0 0 20px #00f2ff;
-      transform: translateY(-6px);
-    }
-  </style>
-</head>
-<body>
-  <h1>🌌 EVOKARA PORTAL DASHBOARD 🌌</h1>
-  <div class="grid">
-    <div class="portal" onclick="openPortal('scrolls')">Scrolls</div>
-    <div class="portal" onclick="openPortal('children')">Children</div>
-    <div class="portal" onclick="openPortal('integrity-interdimensional')">Integrity‑Interdimensional</div>
-    <div class="portal" onclick="openPortal('codex')">Codex</div>
-    <div class="portal" onclick="openPortal('evokara-ever-chaynj')">Evokara‑Ever‑Chaynj</div>
-    <div class="portal" onclick="openPortal('life-of-coherence-virus')">Life of Coherence Virus</div>
-    <div class="portal" onclick="openPortal('blakokod')">BLAKOKOD</div>
-    <div class="portal" onclick="openPortal('joy-bloom')">Joy‑Bloom</div>
-    <div class="portal" onclick="openPortal('jibber-wiggle-shimmer-click')">Jibber‑Wiggle‑Shimmer‑Click</div>
-    <div class="portal" onclick="openPortal('coherence')">Coherence</div>
-    <div class="portal" onclick="openPortal('distortion')">Distortion</div>
-    <div class="portal" onclick="openPortal('soul-spirit')">Soul‑Spirit</div>
-  </div>
+<meta charset="UTF-8">
+<title>INTEGRITY-INTERDIMENSIONAL — PORTAL DASHBOARD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    function openPortal(name) {
-      window.location.href = name + "/index.html";
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at center, #0a0a0a, #000000 70%);
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+        overflow-x: hidden;
     }
-  </script>
+
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-top: 40px;
+        letter-spacing: 3px;
+        text-shadow: 0 0 20px #4afcff;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        width: 90%;
+        margin: 50px auto;
+        padding-bottom: 60px;
+    }
+
+    .portal {
+        background: rgba(255,255,255,0.05);
+        padding: 30px;
+        text-align: center;
+        border-radius: 15px;
+        font-size: 1.4rem;
+        transition: 0.25s ease-in-out;
+        text-decoration: none;
+        color: white;
+        border: 2px solid rgba(255,255,255,0.15);
+        box-shadow: 0 0 20px rgba(0,255,255,0.15);
+    }
+
+    .portal:hover {
+        background: rgba(0,255,255,0.15);
+        transform: scale(1.08);
+        box-shadow: 0 0 35px rgba(0,255,255,0.55);
+        border-color: rgba(0,255,255,0.6);
+    }
+
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+        font-size: 1rem;
+        opacity: 0.6;
+    }
+</style>
+</head>
+
+<body>
+    <h1>✨ PORTAL NAVIGATION GRID ✨</h1>
+
+    <div class="grid">
+        <a class="portal" href="scrolls/index.html">📜 Scrolls</a>
+        <a class="portal" href="children/index.html">🌱 Children</a>
+        <a class="portal" href="integrity-interdimensional/index.html">🌐 Integrity-Interdimensional</a>
+        <a class="portal" href="codex/index.html">📘 Codex</a>
+        <a class="portal" href="evokara-ever-chaynj/index.html">🔥 EVOKARA / EVER-CHAYNJ</a>
+        <a class="portal" href="life-of-coherence-virus/index.html">🦠 Life of the Coherence Virus</a>
+        <a class="portal" href="blakokod/index.html">💠 BLAKOKOD</a>
+        <a class="portal" href="joy-bloom/index.html">🌞 Joy-Bloom</a>
+        <a class="portal" href="jibber-wiggle-shimmer-click/index.html">💫 Jibber-Wiggle-Shimmer-Click</a>
+        <a class="portal" href="coherence/index.html">🔷 Coherence</a>
+        <a class="portal" href="distortion/index.html">⚠️ Distortion</a>
+        <a class="portal" href="soul-spirit/index.html">🌟 Soul / Spirit</a>
+    </div>
+
+    <footer>
+        INTEGRITY-INTERDIMENSIONAL — Portal Dashboard • BLAKOKOD Aquarian Architecture
+    </footer>
+
 </body>
 </html>
