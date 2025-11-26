@@ -387,6 +387,119 @@ animate();
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrity Interdimensional</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: black;
+    }
+
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    #content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 40vh;
+      font-size: 2em;
+      opacity: 0.85;
+    }
+
+    .galaxy {
+      position: absolute;
+      will-change: transform, opacity;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="content">
+    Welcome to the Integrity Interdimensional Home Page
+  </div>
+
+  <script>
+    const galaxyImages = [
+      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
+      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
+      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
+      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
+    ];
+
+    const background = document.getElementById("background");
+    const maxGalaxies = 30; // maximum galaxies on screen
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createGalaxy() {
+      if (background.childElementCount > maxGalaxies) return;
+
+      const img = document.createElement("img");
+      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+      img.classList.add("galaxy");
+
+      // Random starting position
+      const startX = random(0, window.innerWidth);
+      const startY = random(0, window.innerHeight);
+      img.style.left = startX + "px";
+      img.style.top = startY + "px";
+
+      // Random size and opacity
+      const size = random(100, 300);
+      img.style.width = size + "px";
+      img.style.opacity = random(0.3, 0.8);
+
+      background.appendChild(img);
+
+      // Random movement vector
+      const deltaX = random(-300, 300);
+      const deltaY = random(-300, 300);
+      const duration = random(40, 100) * 1000; // in milliseconds
+
+      const startTime = performance.now();
+
+      function animate(time) {
+        const elapsed = time - startTime;
+        const progress = elapsed / duration;
+
+        if (progress < 1) {
+          img.style.transform = `translate(${deltaX * progress}px, ${deltaY * progress}px) rotate(${360 * progress}deg)`;
+          img.style.opacity = parseFloat(img.style.opacity) * (1 - progress * 0.5); // fade slowly
+          requestAnimationFrame(animate);
+        } else {
+          background.removeChild(img); // remove when finished
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    // Spawn galaxies continuously
+    setInterval(createGalaxy, 400);
+  </script>
+</body>
+</html>
 
 // Spawn a new galaxy every 2 seconds
 setInterval(spawnGalaxy, 2000);
