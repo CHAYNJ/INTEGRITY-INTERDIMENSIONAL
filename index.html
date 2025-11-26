@@ -239,3 +239,43 @@
 
 </body>
 </html>
+<style>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 24px;
+}
+.card {
+    background: #1e1e1e;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card .title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.card .meta {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.card .go {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #2cf2ff;
+    color: #000;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.card .go:hover {
+    background: #7b5cff;
+    color: #fff;
+}
+</style>
