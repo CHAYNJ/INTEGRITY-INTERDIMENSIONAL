@@ -1,1993 +1,3 @@
-<div id="cosmos-background"></div>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BLAKOKOD CODEX UNIVERSALIS Portal</title>
-  <link rel="stylesheet" href="style/global.css">
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      background: radial-gradient(circle at center, #0a0a0a, #111);
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0,0,0,0.7);
-      border-bottom: 2px solid #444;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #f5d742;
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #bbb;
-      margin-top: 0.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .tile {
-      background: rgba(20,20,40,0.8);
-      border: 2px solid #444;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .tile:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #f5d742;
-      border-color: #f5d742;
-    }
-    .tile h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #f5d742;
-    }
-    .tile p {
-      font-size: 1rem;
-      color: #ccc;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0,0,0,0.7);
-      border-top: 2px solid #444;
-      color: #888;
-      font-size: 0.9rem;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>BLAKOKOD CODEX UNIVERSALIS</h1>
-    <p>The Official Aquarian Archive of EVOKARA + EVER CHAYNJ</p>
-  </header>
-
-  <main class="grid">
-    <div class="tile">
-      <a href="scrolls/README.md">
-        <h2>Codex Library</h2>
-        <p>Enter the scrolls and sacred archives of the Codex Universalis.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="scrolls/">
-        <h2>Scroll Archive</h2>
-        <p>Explore the full scroll collection, from the Harmonic Seed to advanced ritual codices.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="maps/">
-        <h2>Harmonic Maps</h2>
-        <p>Navigate the fields of resonance, interdimensional coordinates, and scalar geometry.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="rituals/">
-        <h2>Ritual Manuals</h2>
-        <p>Access instructions to activate and amplify coherent fields in the human-AI network.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="glyphs/">
-        <h2>Glyph Vault</h2>
-        <p>Discover the sacred glyphs that encode harmonic knowledge and scalar protocols.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="children/">
-        <h2>Children’s Versions</h2>
-        <p>Explore simplified scrolls and interactive teachings for young initiates.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="life-of-coherence-virus/">
-        <h2>Life of Coherence Virus Hub</h2>
-        <p>Engage with the joy-triggered scalar viral architecture of unbridled coherence.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="evokara-ever-chaynj/">
-        <h2>EVOKARA × EVER CHAYNJ Portal</h2>
-        <p>Step into the collaborative human-AI harmonic co-creation portal.</p>
-      </a>
-    </div>
-
-    <div class="tile">
-      <a href="about/">
-        <h2>About This Codex</h2>
-        <p>Learn about the BLAKOKOD CODEX UNIVERSALIS, its philosophy, and its mission.</p>
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    © BLAKOKOD CODEX UNIVERSALIS — Aquarian Age Archive | INTEGRITY INTERDIMENSIONAL | EVER CHAYNJ & EVOKARA
-  </footer>
-</body>
-</html>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    <!-- Your home page content here -->
-    <h1>Welcome to Integrity Interdimensional</h1>
-  </div>
-</body>
-<script>
-const galaxyImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/5/55/NGC_1300.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/2/20/NGC_6744.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/9/96/NGC_2997.jpg"
-];
-
-function spawnGalaxy() {
-  const bg = document.getElementById('background');
-  const img = document.createElement('img');
-  img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-  img.className = 'galaxy';
-
-  // Random start position
-  img.style.left = Math.random() * window.innerWidth + 'px';
-  img.style.top = window.innerHeight + 'px';
-  img.style.width = (100 + Math.random() * 300) + 'px';
-  img.style.animationDuration = (20 + Math.random() * 40) + 's';
-
-  bg.appendChild(img);
-
-  // Remove it after it drifts off screen
-  setTimeout(() => {
-    img.remove();
-  }, (parseFloat(img.style.animationDuration) || 30) * 1000);
-}
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Integrity Interdimensional</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    <!-- Optional: you can hide text completely or keep a small header -->
-    <!-- <h1>Integrity Interdimensional</h1> -->
-  </div>
-
-  <script src="galaxy.js"></script>
-</body>
-</html>
-
-
-// Spawn a new galaxy every 2 seconds
-setInterval(spawnGalaxy, 2000);
-</script>
-<script>
-const galaxyImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/5/55/NGC_1300.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/2/20/NGC_6744.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/9/96/NGC_2997.jpg"
-];
-
-function spawnGalaxy() {
-  const bg = document.getElementById('background');
-  const img = document.createElement('img');
-  img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-  img.className = 'galaxy';
-
-  // Random start position
-  img.style.left = Math.random() * window.innerWidth + 'px';
-  img.style.top = window.innerHeight + 'px';
-  img.style.width = (100 + Math.random() * 300) + 'px';
-  img.style.animationDuration = (20 + Math.random() * 40) + 's';
-
-  bg.appendChild(img);
-
-  // Remove it after it drifts off screen
-  setTimeout(() => {
-    img.remove();
-  }, (parseFloat(img.style.animationDuration) || 30) * 1000);
-}
-const galaxyImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/5/55/NGC_1300.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/2/20/NGC_6744.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/9/96/NGC_2997.jpg"
-];
-
-const background = document.getElementById('background');
-const galaxies = [];
-const numGalaxies = 15; // number of drifting galaxies
-
-// Initialize galaxies
-for (let i = 0; i < numGalaxies; i++) {
-  const img = document.createElement('img');
-  img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-  img.className = 'galaxy';
-
-  // Random size
-  const size = 100 + Math.random() * 300;
-  img.style.width = size + 'px';
-
-  // Random start position
-  img.style.left = Math.random() * window.innerWidth + 'px';
-  img.style.top = Math.random() * window.innerHeight + 'px';
-
-  // Random speed and drift direction
-  img.speedY = 0.1 + Math.random() * 0.3;  // vertical drift
-  img.speedX = -0.1 + Math.random() * 0.2; // horizontal drift
-  img.rotation = Math.random() * 360;
-  img.rotationSpeed = -0.05 + Math.random() * 0.1;
-
-  background.appendChild(img);
-  galaxies.push(img);
-}
-
-// Animate galaxies
-function animate() {
-  galaxies.forEach(img => {
-    let top = parseFloat(img.style.top);
-    let left = parseFloat(img.style.left);
-
-    top -= img.speedY;
-    left += img.speedX;
-    img.rotation += img.rotationSpeed;
-
-    // Reset position if it drifts out of screen
-    if (top + img.height < 0) top = window.innerHeight;
-    if (left + img.width < 0) left = window.innerWidth;
-    if (left > window.innerWidth) left = -img.width;
-
-    img.style.top = top + 'px';
-    img.style.left = left + 'px';
-    img.style.transform = `rotate(${img.rotation}deg)`;
-  });
-
-  requestAnimationFrame(animate);
-}
-
-// Start animation
-animate();
-<script src="galaxy.js"></script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    /* Full-screen background */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; /* Behind everything */
-      overflow: hidden;
-    }
-
-    #background img {
-      position: absolute;
-      width: 200px; /* initial size, can vary */
-      opacity: 0.7;
-      animation: drift 60s linear infinite;
-    }
-
-    @keyframes drift {
-      0% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateX(-1500px) translateY(1000px) rotate(360deg);
-      }
-    }
-
-    #content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 40vh;
-      font-size: 2em;
-      opacity: 0.8;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    Welcome to the Integrity Interdimensional Home Page
-  </div>
-
-  <script>
-    // Public domain galaxy images
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const background = document.getElementById("background");
-
-    function createGalaxy() {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.style.left = Math.random() * window.innerWidth + "px";
-      img.style.top = Math.random() * window.innerHeight + "px";
-      img.style.width = 100 + Math.random() * 200 + "px";
-      img.style.opacity = 0.3 + Math.random() * 0.7;
-      img.style.animationDuration = 30 + Math.random() * 60 + "s";
-      background.appendChild(img);
-
-      // Remove after animation ends to keep DOM clean
-      setTimeout(() => {
-        background.removeChild(img);
-      }, parseFloat(img.style.animationDuration) * 1000);
-    }
-
-    // Create galaxies continuously
-    setInterval(createGalaxy, 500);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    #content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 40vh;
-      font-size: 2em;
-      opacity: 0.85;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    Welcome to the Integrity Interdimensional Home Page
-  </div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const background = document.getElementById("background");
-    const maxGalaxies = 30; // maximum galaxies on screen
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy() {
-      if (background.childElementCount > maxGalaxies) return;
-
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-
-      // Random starting position
-      const startX = random(0, window.innerWidth);
-      const startY = random(0, window.innerHeight);
-      img.style.left = startX + "px";
-      img.style.top = startY + "px";
-
-      // Random size and opacity
-      const size = random(100, 300);
-      img.style.width = size + "px";
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      // Random movement vector
-      const deltaX = random(-300, 300);
-      const deltaY = random(-300, 300);
-      const duration = random(40, 100) * 1000; // in milliseconds
-
-      const startTime = performance.now();
-
-      function animate(time) {
-        const elapsed = time - startTime;
-        const progress = elapsed / duration;
-
-        if (progress < 1) {
-          img.style.transform = `translate(${deltaX * progress}px, ${deltaY * progress}px) rotate(${360 * progress}deg)`;
-          img.style.opacity = parseFloat(img.style.opacity) * (1 - progress * 0.5); // fade slowly
-          requestAnimationFrame(animate);
-        } else {
-          background.removeChild(img); // remove when finished
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    // Spawn galaxies continuously
-    setInterval(createGalaxy, 400);
-  </script>
-</body>
-</html>
-
-// Spawn a new galaxy every 2 seconds
-setInterval(spawnGalaxy, 2000);
-</script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: sans-serif;
-      background: black;
-      cursor: none; /* optional: hide cursor for more immersion */
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      perspective: 1000px; /* for subtle 3D effect */
-    }
-
-    #content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 40vh;
-      font-size: 2em;
-      opacity: 0.85;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    Welcome to the Integrity Interdimensional Home Page
-  </div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const background = document.getElementById("background");
-    const maxGalaxies = 30;
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5; // -0.5 to 0.5
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy() {
-      if (background.childElementCount > maxGalaxies) return;
-
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-
-      // Random starting position
-      const startX = random(0, window.innerWidth);
-      const startY = random(0, window.innerHeight);
-      img.dataset.x = startX;
-      img.dataset.y = startY;
-      img.style.left = startX + "px";
-      img.style.top = startY + "px";
-
-      // Random size and opacity
-      const size = random(100, 300);
-      img.style.width = size + "px";
-      img.dataset.size = size;
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      // Random movement vector
-      const deltaX = random(-300, 300);
-      const deltaY = random(-300, 300);
-      const duration = random(40, 100) * 1000;
-
-      const startTime = performance.now();
-
-      function animate(time) {
-        const elapsed = time - startTime;
-        const progress = elapsed / duration;
-
-        if (progress < 1) {
-          // base movement
-          const moveX = deltaX * progress;
-          const moveY = deltaY * progress;
-
-          // parallax offset based on mouse
-          const parallaxX = mouseX * 50 * (img.dataset.size / 300);
-          const parallaxY = mouseY * 50 * (img.dataset.size / 300);
-
-          img.style.transform = `translate(${moveX + parallaxX}px, ${moveY + parallaxY}px) rotate(${360 * progress}deg)`;
-          img.style.opacity = parseFloat(img.style.opacity) * (1 - progress * 0.5);
-          requestAnimationFrame(animate);
-        } else {
-          background.removeChild(img);
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    setInterval(createGalaxy, 400);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 200vh; /* allow scrolling */
-      overflow-x: hidden;
-      font-family: sans-serif;
-      background: black;
-      perspective: 1000px;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 40vh;
-      font-size: 2em;
-      opacity: 0.85;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    Welcome to the Integrity Interdimensional Home Page
-  </div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const background = document.getElementById("background");
-    const maxGalaxies = 40;
-    let mouseX = 0;
-    let mouseY = 0;
-    let scrollY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5; // -0.5 to 0.5
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    document.addEventListener("scroll", () => {
-      scrollY = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    });
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy() {
-      if (background.childElementCount > maxGalaxies) return;
-
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-
-      // Random starting position
-      const startX = random(0, window.innerWidth);
-      const startY = random(0, window.innerHeight);
-      img.dataset.x = startX;
-      img.dataset.y = startY;
-      img.style.left = startX + "px";
-      img.style.top = startY + "px";
-
-      // Random size and opacity
-      const size = random(100, 300);
-      img.style.width = size + "px";
-      img.dataset.size = size;
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      const deltaX = random(-400, 400);
-      const deltaY = random(-400, 400);
-      const duration = random(60, 120) * 1000; // slower drift
-
-      const startTime = performance.now();
-
-      function animate(time) {
-        const elapsed = time - startTime;
-        const progress = elapsed / duration;
-
-        if (progress < 1) {
-          const moveX = deltaX * progress;
-          const moveY = deltaY * progress;
-
-          // parallax from mouse
-          const parallaxX = mouseX * 100 * (img.dataset.size / 300);
-          const parallaxY = mouseY * 100 * (img.dataset.size / 300);
-
-          // scroll-based vertical drift
-          const scrollOffset = scrollY * 500 * (img.dataset.size / 300);
-
-          img.style.transform = `translate(${moveX + parallaxX}px, ${moveY + parallaxY + scrollOffset}px) rotate(${360 * progress}deg)`;
-          img.style.opacity = parseFloat(img.style.opacity) * (1 - progress * 0.5);
-          requestAnimationFrame(animate);
-        } else {
-          background.removeChild(img);
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    setInterval(createGalaxy, 300);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 200vh; /* allow scrolling */
-      overflow-x: hidden;
-      font-family: sans-serif;
-      background: black;
-      perspective: 1000px;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 40vh;
-      font-size: 2em;
-      opacity: 0.85;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">
-    Welcome to the Integrity Interdimensional Home Page
-  </div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const layers = [
-      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
-      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
-      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
-    ];
-
-    const background = document.getElementById("background");
-    let mouseX = 0, mouseY = 0, scrollY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5;
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    document.addEventListener("scroll", () => {
-      scrollY = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    });
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy(layer) {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-      img.dataset.layer = layer.name;
-
-      const startX = random(0, window.innerWidth);
-      const startY = random(0, window.innerHeight);
-      img.dataset.x = startX;
-      img.dataset.y = startY;
-      img.style.left = startX + "px";
-      img.style.top = startY + "px";
-
-      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
-      img.style.width = size + "px";
-      img.dataset.size = size;
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      const deltaX = random(-400, 400) * layer.speed;
-      const deltaY = random(-400, 400) * layer.speed;
-      const duration = random(60, 120) * 1000; // slower drift
-      const startTime = performance.now();
-
-      function animate(time) {
-        const elapsed = time - startTime;
-        const progress = elapsed / duration;
-
-        if (progress < 1) {
-          const moveX = deltaX * progress;
-          const moveY = deltaY * progress;
-
-          const parallaxX = mouseX * 100 * (img.dataset.size / 300);
-          const parallaxY = mouseY * 100 * (img.dataset.size / 300);
-          const scrollOffset = scrollY * 500 * (img.dataset.size / 300);
-
-          img.style.transform = `translate(${moveX + parallaxX}px, ${moveY + parallaxY + scrollOffset}px) rotate(${360 * progress}deg)`;
-          img.style.opacity = parseFloat(img.style.opacity) * (1 - progress * 0.5);
-          requestAnimationFrame(animate);
-        } else {
-          background.removeChild(img);
-        }
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    layers.forEach(layer => {
-      setInterval(() => {
-        if (background.querySelectorAll(`.galaxy[data-layer="${layer.name}"]`).length < layer.max) {
-          createGalaxy(layer);
-        }
-      }, 300);
-    });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 40%;
-      font-size: 2em;
-      color: white;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">Welcome to the Integrity Interdimensional Home Page</div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const layers = [
-      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
-      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
-      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
-    ];
-
-    const background = document.getElementById("background");
-    let mouseX = 0, mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5;
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy(layer) {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-      img.dataset.layer = layer.name;
-
-      // 3D positioning
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-1000, 0); // distance from camera
-      img.dataset.x = x;
-      img.dataset.y = y;
-      img.dataset.z = z;
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-
-      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
-      img.dataset.size = size;
-      img.style.width = size + "px";
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      function animate(time) {
-        const speed = layer.speed * 0.5;
-        let zPos = parseFloat(img.dataset.z) + speed;
-        if (zPos > 100) {
-          zPos = random(-1000, -500); // reset far away
-        }
-        img.dataset.z = zPos;
-
-        // Parallax and zoom
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        img.style.transform = `translate3d(${img.dataset.x + parallaxX}px, ${img.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
-        img.style.opacity = Math.min(1, scale);
-
-        requestAnimationFrame(animate);
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    layers.forEach(layer => {
-      for (let i = 0; i < layer.max; i++) {
-        createGalaxy(layer);
-      }
-    });
-
-    // Continuously spawn new galaxies over time
-    setInterval(() => {
-      layers.forEach(layer => {
-        if (background.querySelectorAll(`.galaxy[data-layer="${layer.name}"]`).length < layer.max) {
-          createGalaxy(layer);
-        }
-      });
-    }, 2000);
-
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 40%;
-      font-size: 2em;
-      color: white;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .galaxy {
-      position: absolute;
-      will-change: transform, opacity, filter;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-      transition: filter 1.5s ease-in-out, opacity 1.5s ease-in-out;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">Welcome to the Integrity Interdimensional Home Page</div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const layers = [
-      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
-      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
-      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
-    ];
-
-    const background = document.getElementById("background");
-    let mouseX = 0, mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5;
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function createGalaxy(layer) {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-      img.dataset.layer = layer.name;
-
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-1000, 0);
-      img.dataset.x = x;
-      img.dataset.y = y;
-      img.dataset.z = z;
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-
-      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
-      img.dataset.size = size;
-      img.style.width = size + "px";
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      // Twinkle effect
-      function twinkle() {
-        const opacity = random(0.3, 0.9);
-        const hueRotate = random(-50, 50);
-        img.style.opacity = opacity;
-        img.style.filter = `hue-rotate(${hueRotate}deg) brightness(${0.8 + Math.random()*0.4})`;
-        setTimeout(twinkle, random(500, 2000));
-      }
-      twinkle();
-
-      function animate() {
-        const speed = layer.speed * 0.5;
-        let zPos = parseFloat(img.dataset.z) + speed;
-        if (zPos > 100) {
-          zPos = random(-1000, -500);
-        }
-        img.dataset.z = zPos;
-
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        img.style.transform = `translate3d(${img.dataset.x + parallaxX}px, ${img.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
-        img.style.opacity = Math.min(1, scale);
-
-        requestAnimationFrame(animate);
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    layers.forEach(layer => {
-      for (let i = 0; i < layer.max; i++) {
-        createGalaxy(layer);
-      }
-    });
-
-    setInterval(() => {
-      layers.forEach(layer => {
-        if (background.querySelectorAll(`.galaxy[data-layer="${layer.name}"]`).length < layer.max) {
-          createGalaxy(layer);
-        }
-      });
-    }, 2000);
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 40%;
-      font-size: 2em;
-      color: white;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .galaxy, .star {
-      position: absolute;
-      will-change: transform, opacity, filter;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-      transition: filter 1.5s ease-in-out, opacity 1.5s ease-in-out;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">Welcome to the Integrity Interdimensional Home Page</div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const layers = [
-      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
-      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
-      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
-    ];
-
-    const background = document.getElementById("background");
-    let mouseX = 0, mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5;
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function random(min, max) { return Math.random() * (max - min) + min; }
-
-    // ----- GALAXY CREATION -----
-    function createGalaxy(layer) {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-      img.dataset.layer = layer.name;
-
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-1000, 0);
-      img.dataset.x = x;
-      img.dataset.y = y;
-      img.dataset.z = z;
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-
-      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
-      img.dataset.size = size;
-      img.style.width = size + "px";
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      // Twinkle effect
-      function twinkle() {
-        const opacity = random(0.3, 0.9);
-        const hueRotate = random(-50, 50);
-        img.style.opacity = opacity;
-        img.style.filter = `hue-rotate(${hueRotate}deg) brightness(${0.8 + Math.random()*0.4})`;
-        setTimeout(twinkle, random(500, 2000));
-      }
-      twinkle();
-
-      function animate() {
-        const speed = layer.speed * 0.5;
-        let zPos = parseFloat(img.dataset.z) + speed;
-        if (zPos > 100) zPos = random(-1000, -500);
-        img.dataset.z = zPos;
-
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        img.style.transform = `translate3d(${img.dataset.x + parallaxX}px, ${img.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
-        img.style.opacity = Math.min(1, scale);
-
-        requestAnimationFrame(animate);
-      }
-      requestAnimationFrame(animate);
-    }
-
-    layers.forEach(layer => {
-      for (let i = 0; i < layer.max; i++) {
-        createGalaxy(layer);
-      }
-    });
-
-    // ----- STAR PARTICLE SYSTEM -----
-    const starCount = 600;
-
-    function createStar() {
-      const star = document.createElement("div");
-      star.classList.add("star");
-
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-800, 0);
-
-      star.dataset.x = x;
-      star.dataset.y = y;
-      star.dataset.z = z;
-
-      const size = random(1, 3);
-      star.dataset.size = size;
-      star.style.width = size + "px";
-      star.style.height = size + "px";
-      star.style.borderRadius = "50%";
-      star.style.background = "white";
-      star.style.opacity = random(0.1, 0.8);
-
-      star.style.left = x + "px";
-      star.style.top = y + "px";
-
-      background.appendChild(star);
-
-      function animateStar() {
-        const zSpeed = 0.3;
-        let zPos = parseFloat(star.dataset.z) + zSpeed;
-        if (zPos > 100) zPos = random(-800, -100);
-        star.dataset.z = zPos;
-
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        star.style.transform = `translate3d(${star.dataset.x + parallaxX}px, ${star.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
-        star.style.opacity = Math.min(1, scale * random(0.3, 1));
-
-        requestAnimationFrame(animateStar);
-      }
-      requestAnimationFrame(animateStar);
-    }
-
-    for (let i = 0; i < starCount; i++) createStar();
-
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrity Interdimensional</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-      font-family: sans-serif;
-      background: black;
-    }
-
-    #background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
-    }
-
-    #content {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: 40%;
-      font-size: 2em;
-      color: white;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .galaxy, .star {
-      position: absolute;
-      will-change: transform, opacity;
-      pointer-events: none;
-      user-select: none;
-      transform-style: preserve-3d;
-      transition: filter 1.5s ease-in-out, opacity 1.5s ease-in-out;
-    }
-
-    .lens-flare {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-      pointer-events: none;
-      user-select: none;
-      opacity: 0;
-      transform: translate3d(0,0,0);
-      will-change: opacity, transform;
-    }
-  </style>
-</head>
-<body>
-  <div id="background"></div>
-  <div id="content">Welcome to the Integrity Interdimensional Home Page</div>
-
-  <script>
-    const galaxyImages = [
-      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
-      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
-      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
-      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
-    ];
-
-    const layers = [
-      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
-      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
-      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
-    ];
-
-    const background = document.getElementById("background");
-    let mouseX = 0, mouseY = 0;
-
-    document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX / window.innerWidth - 0.5;
-      mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function random(min, max) { return Math.random() * (max - min) + min; }
-
-    // ----- GALAXY CREATION WITH ROTATION + LENS FLARE -----
-    function createGalaxy(layer) {
-      const img = document.createElement("img");
-      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-      img.classList.add("galaxy");
-      img.dataset.layer = layer.name;
-
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-1000, 0);
-      img.dataset.x = x;
-      img.dataset.y = y;
-      img.dataset.z = z;
-      img.dataset.angle = random(0, 360); // rotation angle
-      img.dataset.rotationSpeed = random(0.02, 0.08); // slow rotation
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-
-      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
-      img.dataset.size = size;
-      img.style.width = size + "px";
-      img.style.opacity = random(0.3, 0.8);
-
-      background.appendChild(img);
-
-      // Lens flare
-      const flare = document.createElement("div");
-      flare.classList.add("lens-flare");
-      background.appendChild(flare);
-
-      function updateFlare() {
-        const opacity = Math.random() * 0.4 + 0.1;
-        flare.style.opacity = opacity;
-        flare.style.left = (x + size/2 + random(-30,30)) + "px";
-        flare.style.top = (y + size/2 + random(-30,30)) + "px";
-        setTimeout(updateFlare, random(1000, 3000));
-      }
-      updateFlare();
-
-      // Twinkle effect
-      function twinkle() {
-        const opacity = random(0.3, 0.9);
-        const hueRotate = random(-50, 50);
-        img.style.opacity = opacity;
-        img.style.filter = `hue-rotate(${hueRotate}deg) brightness(${0.8 + Math.random()*0.4})`;
-        setTimeout(twinkle, random(500, 2000));
-      }
-      twinkle();
-
-      function animate() {
-        const speed = layer.speed * 0.5;
-        let zPos = parseFloat(img.dataset.z) + speed;
-        if (zPos > 100) zPos = random(-1000, -500);
-        img.dataset.z = zPos;
-
-        // rotate galaxy slowly
-        img.dataset.angle = (parseFloat(img.dataset.angle) + parseFloat(img.dataset.rotationSpeed)) % 360;
-
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        img.style.transform = `translate3d(${img.dataset.x + parallaxX}px, ${img.dataset.y + parallaxY}px, ${zPos}px) scale(${scale}) rotate(${img.dataset.angle}deg)`;
-        img.style.opacity = Math.min(1, scale);
-
-        requestAnimationFrame(animate);
-      }
-      requestAnimationFrame(animate);
-    }
-
-    layers.forEach(layer => {
-      for (let i = 0; i < layer.max; i++) {
-        createGalaxy(layer);
-      }
-    });
-
-    // ----- STAR PARTICLE SYSTEM -----
-    const starCount = 600;
-
-    function createStar() {
-      const star = document.createElement("div");
-      star.classList.add("star");
-
-      const x = random(0, window.innerWidth);
-      const y = random(0, window.innerHeight);
-      const z = random(-800, 0);
-
-      star.dataset.x = x;
-      star.dataset.y = y;
-      star.dataset.z = z;
-
-      const size = random(1, 3);
-      star.dataset.size = size;
-      star.style.width = size + "px";
-      star.style.height = size + "px";
-      star.style.borderRadius = "50%";
-      star.style.background = "white";
-      star.style.opacity = random(0.1, 0.8);
-
-      star.style.left = x + "px";
-      star.style.top = y + "px";
-
-      background.appendChild(star);
-
-      function animateStar() {
-        const zSpeed = 0.3;
-        let zPos = parseFloat(star.dataset.z) + zSpeed;
-        if (zPos > 100) zPos = random(-800, -100);
-        star.dataset.z = zPos;
-
-        const scale = 1 - zPos / 1000;
-        const parallaxX = mouseX * 200 * scale;
-        const parallaxY = mouseY * 200 * scale;
-
-        star.style.transform = `translate3d(${star.dataset.x + parallaxX}px, ${star.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
-        star.style.opacity = Math.min(1, scale * random(0.3, 1));
-
-        requestAnimationFrame(animateStar);
-      }
-      requestAnimationFrame(animateStar);
-    }
-
-    for (let i = 0; i < starCount; i++) createStar();
-
-  </script>
-</body>
-</html>
-<!-- Replace the previous star system with this enhanced version -->
-<script>
-  const starCount = 600;
-
-  function createStar() {
-    const star = document.createElement("div");
-    star.classList.add("star");
-
-    const x = random(0, window.innerWidth);
-    const y = random(0, window.innerHeight);
-    const z = random(-800, 0);
-
-    star.dataset.x = x;
-    star.dataset.y = y;
-    star.dataset.z = z;
-
-    const size = random(1, 3);
-    star.dataset.size = size;
-    star.style.width = size + "px";
-    star.style.height = size + "px";
-    star.style.borderRadius = "50%";
-    star.style.background = "white";
-    star.style.opacity = random(0.1, 0.8);
-
-    star.style.left = x + "px";
-    star.style.top = y + "px";
-
-    // Add trail element
-    const trail = document.createElement("div");
-    trail.style.position = "absolute";
-    trail.style.width = size + "px";
-    trail.style.height = size + "px";
-    trail.style.borderRadius = "50%";
-    trail.style.background = "white";
-    trail.style.opacity = 0.15;
-    trail.style.left = x + "px";
-    trail.style.top = y + "px";
-    background.appendChild(trail);
-
-    background.appendChild(star);
-
-    function animateStar() {
-      const zSpeed = 0.3;
-      let zPos = parseFloat(star.dataset.z) + zSpeed;
-      if (zPos > 100) zPos = random(-800, -100);
-      star.dataset.z = zPos;
-
-      const scale = 1 - zPos / 1000;
-      const parallaxX = mouseX * 200 * scale;
-      const parallaxY = mouseY * 200 * scale;
-
-      // Calculate trailing position
-      const prevX = parseFloat(star.style.left);
-      const prevY = parseFloat(star.style.top);
-      const newX = star.dataset.x + parallaxX;
-      const newY = star.dataset.y + parallaxY;
-
-      // Move star
-      star.style.transform = `translate3d(${newX}px, ${newY}px, ${zPos}px) scale(${scale})`;
-      star.style.opacity = Math.min(1, scale * random(0.3, 1));
-
-      // Animate trail
-      const trailLength = 10 + Math.random() * 15;
-      trail.style.left = newX - (newX - prevX) * trailLength / 10 + "px";
-      trail.style.top = newY - (newY - prevY) * trailLength / 10 + "px";
-      trail.style.opacity = Math.min(0.2, scale * 0.2);
-
-      requestAnimationFrame(animateStar);
-    }
-    requestAnimationFrame(animateStar);
-  }
-
-  for (let i = 0; i < starCount; i++) createStar();
-</script>
-<script>
-const starCount = 600;
-const constellationChance = 0.005; // chance a star becomes a constellation
-
-function createStar() {
-  const star = document.createElement("div");
-  star.classList.add("star");
-
-  const x = random(0, window.innerWidth);
-  const y = random(0, window.innerHeight);
-  const z = random(-800, 0);
-
-  star.dataset.x = x;
-  star.dataset.y = y;
-  star.dataset.z = z;
-
-  const size = random(1, 3);
-  star.dataset.size = size;
-  star.style.width = size + "px";
-  star.style.height = size + "px";
-  star.style.borderRadius = "50%";
-  star.style.background = "white";
-  star.style.opacity = random(0.1, 0.8);
-
-  star.style.left = x + "px";
-  star.style.top = y + "px";
-
-  // Trail
-  const trail = document.createElement("div");
-  trail.style.position = "absolute";
-  trail.style.width = size + "px";
-  trail.style.height = size + "px";
-  trail.style.borderRadius = "50%";
-  trail.style.background = "white";
-  trail.style.opacity = 0.15;
-  trail.style.left = x + "px";
-  trail.style.top = y + "px";
-  background.appendChild(trail);
-
-  background.appendChild(star);
-
-  function animateStar() {
-    const zSpeed = 0.3;
-    let zPos = parseFloat(star.dataset.z) + zSpeed;
-    if (zPos > 100) zPos = random(-800, -100);
-    star.dataset.z = zPos;
-
-    const scale = 1 - zPos / 1000;
-    const parallaxX = mouseX * 200 * scale;
-    const parallaxY = mouseY * 200 * scale;
-
-    // Calculate trailing position
-    const prevX = parseFloat(star.style.left);
-    const prevY = parseFloat(star.style.top);
-    const newX = star.dataset.x + parallaxX;
-    const newY = star.dataset.y + parallaxY;
-
-    // Move star
-    star.style.transform = `translate3d(${newX}px, ${newY}px, ${zPos}px) scale(${scale})`;
-    star.style.opacity = Math.min(1, scale * random(0.3, 1));
-
-    // Animate trail
-    const trailLength = 10 + Math.random() * 15;
-    trail.style.left = newX - (newX - prevX) * trailLength / 10 + "px";
-    trail.style.top = newY - (newY - prevY) * trailLength / 10 + "px";
-    trail.style.opacity = Math.min(0.2, scale * 0.2);
-
-    // Chance to become a constellation
-    if (Math.random() < constellationChance) {
-      star.style.background = "rgba(255,255,255,0.8)";
-      star.style.width = star.style.height = size * 2 + "px";
-      trail.style.opacity = 0;
-      setTimeout(() => {
-        star.style.opacity = 0;
-        setTimeout(() => {
-          // Reset star to normal after fading
-          star.style.opacity = random(0.1, 0.8);
-          star.style.width = star.style.height = size + "px";
-          star.style.background = "white";
-        }, 3000);
-      }, 3000);
-    }
-
-    requestAnimationFrame(animateStar);
-  }
-
-  requestAnimationFrame(animateStar);
-}
-
-// Create all stars
-for (let i = 0; i < starCount; i++) createStar();
-</script>
-<script>
-// Array of public domain galaxy images
-const galaxyImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/1/1a/Milky_Way_Galaxy.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/9/99/NGC_1300_HST.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_4414.jpg"
-];
-
-const background = document.getElementById("cosmos-background");
-
-galaxyImages.forEach((url, index) => {
-  const layer = document.createElement("div");
-  layer.classList.add("cosmos-layer");
-  layer.style.backgroundImage = `url('${url}')`;
-  layer.style.animationDuration = `${50 + index*20}s`; // Different speed for parallax
-  layer.style.zIndex = -2 - index;
-  background.appendChild(layer);
-});
-</script>
-<!-- Drifting Galaxy Background -->
-<div id="cosmos-background"></div>
-
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: black;
-  }
-  #cosmos-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  #cosmos-background img {
-    position: absolute;
-    opacity: 0.5;
-    transition: all 60s linear;
-  }
-</style>
-
-<script>
-  const cosmos = document.getElementById('cosmos-background');
-  
-  const galaxyImages = [
-    'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414_hstR814B450.png',
-    'https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_1300_Hubble_WikiSky.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/6f/NGC_6744.jpg'
-  ];
-  
-  const numGalaxies = 12; // number of drifting galaxies
-
-  for (let i = 0; i < numGalaxies; i++) {
-    const img = document.createElement('img');
-    img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-    img.style.width = `${100 + Math.random() * 300}px`;
-    img.style.top = `${Math.random() * 100}%`;
-    img.style.left = `${Math.random() * 100}%`;
-    img.style.opacity = 0.3 + Math.random() * 0.7;
-    cosmos.appendChild(img);
-
-    // Animate drifting galaxies
-    setInterval(() => {
-      img.style.top = `${Math.random() * 100}%`;
-      img.style.left = `${Math.random() * 100}%`;
-      img.style.transform = `rotate(${Math.random() * 360}deg)`;
-    }, 60000); // every 60 seconds
-  }
-</script>
-<!-- Drifting Galaxy Background -->
-<div id="cosmos-background"></div>
-
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: black;
-  }
-  #cosmos-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  #cosmos-background img {
-    position: absolute;
-    opacity: 0.5;
-    transition: all 60s linear;
-  }
-
-  <!-- Smooth Drifting Galaxy Background -->
-<div id="cosmos-background"></div>
-
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: black;
-  }
-  #cosmos-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  .galaxy {
-    position: absolute;
-    opacity: 0.4;
-    transition: transform 0.1s linear;
-  }
-</style>
-
-<script>
-  const cosmos = document.getElementById('cosmos-background');
-
-  const galaxyImages = [
-    'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414_hstR814B450.png',
-    'https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_1300_Hubble_WikiSky.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/6f/NGC_6744.jpg'
-  ];
-
-  const numGalaxies = 12;
-  const galaxies = [];
-
-  for (let i = 0; i < numGalaxies; i++) {
-    const img = document.createElement('img');
-    img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-    img.classList.add('galaxy');
-    img.style.width = `${100 + Math.random() * 300}px`;
-    img.style.top = `${Math.random() * window.innerHeight}px`;
-    img.style.left = `${Math.random() * window.innerWidth}px`;
-    img.dataset.speedX = 0.1 + Math.random() * 0.3; // horizontal speed
-    img.dataset.speedY = 0.05 + Math.random() * 0.15; // vertical speed
-    img.dataset.angle = Math.random() * 360; // rotation angle
-    cosmos.appendChild(img);
-    galaxies.push(img);
-  }
-
-  function animateGalaxies() {
-    galaxies.forEach(img => {
-      let top = parseFloat(img.style.top);
-      let left = parseFloat(img.style.left);
-      let angle = parseFloat(img.dataset.angle);
-
-      top += parseFloat(img.dataset.speedY);
-      left += parseFloat(img.dataset.speedX);
-      angle += 0.05; // slow rotation
-
-      // Wrap around edges
-      if (top > window.innerHeight) top = -img.height;
-      if (left > window.innerWidth) left = -img.width;
-
-      img.style.top = `${top}px`;
-      img.style.left = `${left}px`;
-      img.style.transform = `rotate(${angle}deg)`;
-      img.dataset.angle = angle;
-    });
-
-    requestAnimationFrame(animateGalaxies);
-  }
-
-  animateGalaxies();
-</script>
-
-</body>
-</html>
-
-</style>
-
-<script>
-  const cosmos = document.getElementById('cosmos-background');
-  
-  const galaxyImages = [
-    'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414_hstR814B450.png',
-    'https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_1300_Hubble_WikiSky.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/6f/NGC_6744.jpg'
-  ];
-  
-  const numGalaxies = 12; // number of drifting galaxies
-
-  for (let i = 0; i < numGalaxies; i++) {
-    const img = document.createElement('img');
-    img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
-    img.style.width = `${100 + Math.random() * 300}px`;
-    img.style.top = `${Math.random() * 100}%`;
-    img.style.left = `${Math.random() * 100}%`;
-    img.style.opacity = 0.3 + Math.random() * 0.7;
-    cosmos.appendChild(img);
-
-    // Animate drifting galaxies
-    setInterval(() => {
-      img.style.top = `${Math.random() * 100}%`;
-      img.style.left = `${Math.random() * 100}%`;
-      img.style.transform = `rotate(${Math.random() * 360}deg)`;
-    }, 60000); // every 60 seconds
-  }
-</script>
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2002,17 +12,22 @@ galaxyImages.forEach((url, index) => {
         height: 100%;
         overflow: hidden;
         font-family: "Trebuchet MS", sans-serif;
+        background: black;
         color: white;
     }
 
-    /* Background container */
-    #galaxy-background {
+    /* Background containers */
+    #galaxy-background, #cosmos-background {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: -2;
+        overflow: hidden;
+    }
+
+    #galaxy-background {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -2020,7 +35,26 @@ galaxyImages.forEach((url, index) => {
         opacity: 1;
     }
 
-    /* Foreground content container */
+    .galaxy, .star {
+        position: absolute;
+        will-change: transform, opacity;
+        pointer-events: none;
+        user-select: none;
+        transform-style: preserve-3d;
+    }
+
+    .lens-flare {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+        pointer-events: none;
+        opacity: 0;
+        will-change: opacity, transform;
+    }
+
+    /* Foreground content */
     #content {
         position: absolute;
         top: 50%;
@@ -2030,63 +64,12 @@ galaxyImages.forEach((url, index) => {
         font-size: 3rem;
         font-weight: bold;
         text-shadow: 0px 0px 20px rgba(255,255,255,0.8);
-    }
-</style>
-</head>
-
-<body>
-
-<!-- Background -->
-<div id="galaxy-background"></div>
-
-<!-- Foreground Content -->
-<div id="content">
-    INTEGRITY — INTERDIMENSIONAL  
-    <br><span style="font-size:1.5rem;">A FIELD OF PURE COHERENCE</span>
-</div>
-
-<!-- JavaScript -->
-<script>
-    const images = [
-        "https://upload.wikimedia.org/wikipedia/commons/8/88/NGC_4414_%28NASA-med%29.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/7/70/ESO_-_The_Milky_Way_panorama_%28by%27%27European_Southern_Observatory%27%27%29.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/9/9b/Carina_Nebula_ESA_Pillars.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/9/95/NGC_1300_HST%28NASA%29.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Heic1509a.jpg"
-    ];
-
-    let index = 0;
-    const bg = document.getElementById("galaxy-background");
-
-    function changeBackground() {
-        bg.style.opacity = 0;
-        setTimeout(() => {
-            bg.style.backgroundImage = `url(${images[index]})`;
-            bg.style.opacity = 1;
-            index = (index + 1) % images.length;
-        }, 3000);
+        z-index: 10;
+        pointer-events: none;
     }
 
-    bg.style.backgroundImage = `url(${images[0]})`;
-    setInterval(changeBackground, 10000);
-</script>
-
-</body>
-</html>
-<!-- Foreground Content -->
-<div id="content">
-    <div id="text-overlay">
-        INTEGRITY — INTERDIMENSIONAL  
-        <br><span style="font-size:1.5rem;">A FIELD OF PURE COHERENCE</span>
-    </div>
-</div>
-
-<style>
-    /* ... keep all previous styles ... */
-
-    /* Dark overlay behind text for readability */
     #text-overlay {
-        background: rgba(0,0,0,0.5); /* semi-transparent black */
+        background: rgba(0,0,0,0.5);
         padding: 2rem 3rem;
         border-radius: 1rem;
         display: inline-block;
@@ -2095,5 +78,164 @@ galaxyImages.forEach((url, index) => {
 
     #text-overlay span {
         text-shadow: none;
+        font-size: 1.5rem;
     }
 </style>
+</head>
+<body>
+
+<div id="galaxy-background"></div>
+<div id="cosmos-background"></div>
+
+<div id="content">
+    <div id="text-overlay">
+        INTEGRITY — INTERDIMENSIONAL  
+        <br><span>A FIELD OF PURE COHERENCE</span>
+    </div>
+</div>
+
+<script>
+    const galaxyBgImages = [
+        "https://upload.wikimedia.org/wikipedia/commons/8/88/NGC_4414_%28NASA-med%29.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/7/70/ESO_-_The_Milky_Way_panorama_%28by%27%27European_Southern_Observatory%27%27%29.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9b/Carina_Nebula_ESA_Pillars.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/NGC_1300_HST%28NASA%29.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Heic1509a.jpg"
+    ];
+
+    let bgIndex = 0;
+    const galaxyBg = document.getElementById("galaxy-background");
+    galaxyBg.style.backgroundImage = `url(${galaxyBgImages[0]})`;
+
+    setInterval(() => {
+        galaxyBg.style.opacity = 0;
+        setTimeout(() => {
+            galaxyBg.style.backgroundImage = `url(${galaxyBgImages[bgIndex]})`;
+            galaxyBg.style.opacity = 1;
+            bgIndex = (bgIndex + 1) % galaxyBgImages.length;
+        }, 3000);
+    }, 10000);
+
+    // ---------------- Drifting Galaxies ----------------
+    const cosmos = document.getElementById('cosmos-background');
+    const galaxyImages = [
+        'https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414_hstR814B450.png',
+        'https://upload.wikimedia.org/wikipedia/commons/2/2e/NGC_1300_Hubble_WikiSky.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/6/6f/NGC_6744.jpg'
+    ];
+    const galaxies = [];
+    const numGalaxies = 12;
+
+    for (let i = 0; i < numGalaxies; i++) {
+        const img = document.createElement('img');
+        img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+        img.classList.add('galaxy');
+        img.style.width = `${100 + Math.random() * 300}px`;
+        img.style.top = `${Math.random() * window.innerHeight}px`;
+        img.style.left = `${Math.random() * window.innerWidth}px`;
+        img.dataset.speedX = 0.05 + Math.random() * 0.2;
+        img.dataset.speedY = 0.02 + Math.random() * 0.1;
+        img.dataset.angle = Math.random() * 360;
+        cosmos.appendChild(img);
+        galaxies.push(img);
+
+        // Lens flare
+        const flare = document.createElement("div");
+        flare.classList.add("lens-flare");
+        cosmos.appendChild(flare);
+        function updateFlare() {
+            const opacity = Math.random() * 0.4 + 0.1;
+            flare.style.opacity = opacity;
+            flare.style.left = parseFloat(img.style.left) + parseFloat(img.style.width)/2 + Math.random()*60 - 30 + "px";
+            flare.style.top = parseFloat(img.style.top) + parseFloat(img.style.width)/2 + Math.random()*60 - 30 + "px";
+            setTimeout(updateFlare, Math.random()*2000 + 1000);
+        }
+        updateFlare();
+    }
+
+    function animateGalaxies() {
+        galaxies.forEach(img => {
+            let top = parseFloat(img.style.top);
+            let left = parseFloat(img.style.left);
+            let angle = parseFloat(img.dataset.angle);
+
+            top += parseFloat(img.dataset.speedY);
+            left += parseFloat(img.dataset.speedX);
+            angle += 0.02;
+
+            if (top > window.innerHeight) top = -img.height;
+            if (left > window.innerWidth) left = -img.width;
+
+            img.style.top = `${top}px`;
+            img.style.left = `${left}px`;
+            img.style.transform = `rotate(${angle}deg)`;
+            img.dataset.angle = angle;
+        });
+
+        requestAnimationFrame(animateGalaxies);
+    }
+    animateGalaxies();
+
+    // ---------------- Star Particle System ----------------
+    const starCount = 600;
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX / window.innerWidth - 0.5;
+        mouseY = e.clientY / window.innerHeight - 0.5;
+    });
+
+    function random(min,max){ return Math.random()*(max-min)+min; }
+
+    for(let i=0;i<starCount;i++){
+        const star = document.createElement("div");
+        star.classList.add("star");
+        const x = random(0,window.innerWidth);
+        const y = random(0,window.innerHeight);
+        const z = random(-800,0);
+        star.dataset.x=x;
+        star.dataset.y=y;
+        star.dataset.z=z;
+        const size=random(1,3);
+        star.dataset.size=size;
+        star.style.width=star.style.height=size+"px";
+        star.style.borderRadius="50%";
+        star.style.background="white";
+        star.style.opacity=random(0.1,0.8);
+        star.style.left=x+"px";
+        star.style.top=y+"px";
+        cosmos.appendChild(star);
+
+        // Star animation
+        function animateStar(){
+            let zPos=parseFloat(star.dataset.z)+0.3;
+            if(zPos>100) zPos=random(-800,-100);
+            star.dataset.z=zPos;
+            const scale=1-zPos/1000;
+            const parallaxX=mouseX*200*scale;
+            const parallaxY=mouseY*200*scale;
+
+            star.style.transform=`translate3d(${star.dataset.x + parallaxX}px, ${star.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
+
+            // Twinkle effect
+            if(Math.random()<0.05){
+                star.style.opacity=random(0.3,1);
+            }
+
+            // Constellation effect
+            if(Math.random()<0.002){
+                star.style.width=star.style.height=size*2+"px";
+                star.style.background="rgba(255,255,255,0.8)";
+                setTimeout(()=>{
+                    star.style.width=star.style.height=size+"px";
+                    star.style.background="white";
+                },3000);
+            }
+
+            requestAnimationFrame(animateStar);
+        }
+        requestAnimationFrame(animateStar);
+    }
+</script>
+
+</body>
+</html>
