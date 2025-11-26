@@ -295,6 +295,98 @@ function animate() {
 // Start animation
 animate();
 <script src="galaxy.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrity Interdimensional</title>
+  <style>
+    /* Full-screen background */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+      background: black;
+    }
+
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Behind everything */
+      overflow: hidden;
+    }
+
+    #background img {
+      position: absolute;
+      width: 200px; /* initial size, can vary */
+      opacity: 0.7;
+      animation: drift 60s linear infinite;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateX(-1500px) translateY(1000px) rotate(360deg);
+      }
+    }
+
+    #content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 40vh;
+      font-size: 2em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="content">
+    Welcome to the Integrity Interdimensional Home Page
+  </div>
+
+  <script>
+    // Public domain galaxy images
+    const galaxyImages = [
+      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
+      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
+      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
+      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
+    ];
+
+    const background = document.getElementById("background");
+
+    function createGalaxy() {
+      const img = document.createElement("img");
+      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+      img.style.left = Math.random() * window.innerWidth + "px";
+      img.style.top = Math.random() * window.innerHeight + "px";
+      img.style.width = 100 + Math.random() * 200 + "px";
+      img.style.opacity = 0.3 + Math.random() * 0.7;
+      img.style.animationDuration = 30 + Math.random() * 60 + "s";
+      background.appendChild(img);
+
+      // Remove after animation ends to keep DOM clean
+      setTimeout(() => {
+        background.removeChild(img);
+      }, parseFloat(img.style.animationDuration) * 1000);
+    }
+
+    // Create galaxies continuously
+    setInterval(createGalaxy, 500);
+  </script>
+</body>
+</html>
 
 // Spawn a new galaxy every 2 seconds
 setInterval(spawnGalaxy, 2000);
