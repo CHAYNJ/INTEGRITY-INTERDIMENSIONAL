@@ -158,3 +158,34 @@
     <h1>Welcome to Integrity Interdimensional</h1>
   </div>
 </body>
+<script>
+const galaxyImages = [
+  "https://upload.wikimedia.org/wikipedia/commons/3/3f/NGC_4414.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/5/55/NGC_1300.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/2/20/NGC_6744.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/9/96/NGC_2997.jpg"
+];
+
+function spawnGalaxy() {
+  const bg = document.getElementById('background');
+  const img = document.createElement('img');
+  img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+  img.className = 'galaxy';
+
+  // Random start position
+  img.style.left = Math.random() * window.innerWidth + 'px';
+  img.style.top = window.innerHeight + 'px';
+  img.style.width = (100 + Math.random() * 300) + 'px';
+  img.style.animationDuration = (20 + Math.random() * 40) + 's';
+
+  bg.appendChild(img);
+
+  // Remove it after it drifts off screen
+  setTimeout(() => {
+    img.remove();
+  }, (parseFloat(img.style.animationDuration) || 30) * 1000);
+}
+
+// Spawn a new galaxy every 2 seconds
+setInterval(spawnGalaxy, 2000);
+</script>
