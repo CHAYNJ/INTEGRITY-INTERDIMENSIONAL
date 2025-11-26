@@ -1058,3 +1058,150 @@ setInterval(spawnGalaxy, 2000);
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrity Interdimensional</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: sans-serif;
+      background: black;
+    }
+
+    #background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    #content {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 40%;
+      font-size: 2em;
+      color: white;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .galaxy {
+      position: absolute;
+      will-change: transform, opacity, filter;
+      pointer-events: none;
+      user-select: none;
+      transform-style: preserve-3d;
+      transition: filter 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="content">Welcome to the Integrity Interdimensional Home Page</div>
+
+  <script>
+    const galaxyImages = [
+      "https://cdn.pixabay.com/photo/2015/12/01/20/28/space-1074603_1280.jpg",
+      "https://cdn.pixabay.com/photo/2016/11/29/12/54/space-1867762_1280.jpg",
+      "https://cdn.pixabay.com/photo/2013/07/18/20/26/space-164487_1280.jpg",
+      "https://cdn.pixabay.com/photo/2014/12/15/18/29/space-569792_1280.jpg"
+    ];
+
+    const layers = [
+      { name: "foreground", speed: 1.5, max: 15, sizeRange: [120, 300] },
+      { name: "midground", speed: 1, max: 20, sizeRange: [80, 180] },
+      { name: "background", speed: 0.5, max: 25, sizeRange: [40, 100] }
+    ];
+
+    const background = document.getElementById("background");
+    let mouseX = 0, mouseY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX / window.innerWidth - 0.5;
+      mouseY = e.clientY / window.innerHeight - 0.5;
+    });
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function createGalaxy(layer) {
+      const img = document.createElement("img");
+      img.src = galaxyImages[Math.floor(Math.random() * galaxyImages.length)];
+      img.classList.add("galaxy");
+      img.dataset.layer = layer.name;
+
+      const x = random(0, window.innerWidth);
+      const y = random(0, window.innerHeight);
+      const z = random(-1000, 0);
+      img.dataset.x = x;
+      img.dataset.y = y;
+      img.dataset.z = z;
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+
+      const size = random(layer.sizeRange[0], layer.sizeRange[1]);
+      img.dataset.size = size;
+      img.style.width = size + "px";
+      img.style.opacity = random(0.3, 0.8);
+
+      background.appendChild(img);
+
+      // Twinkle effect
+      function twinkle() {
+        const opacity = random(0.3, 0.9);
+        const hueRotate = random(-50, 50);
+        img.style.opacity = opacity;
+        img.style.filter = `hue-rotate(${hueRotate}deg) brightness(${0.8 + Math.random()*0.4})`;
+        setTimeout(twinkle, random(500, 2000));
+      }
+      twinkle();
+
+      function animate() {
+        const speed = layer.speed * 0.5;
+        let zPos = parseFloat(img.dataset.z) + speed;
+        if (zPos > 100) {
+          zPos = random(-1000, -500);
+        }
+        img.dataset.z = zPos;
+
+        const scale = 1 - zPos / 1000;
+        const parallaxX = mouseX * 200 * scale;
+        const parallaxY = mouseY * 200 * scale;
+
+        img.style.transform = `translate3d(${img.dataset.x + parallaxX}px, ${img.dataset.y + parallaxY}px, ${zPos}px) scale(${scale})`;
+        img.style.opacity = Math.min(1, scale);
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    layers.forEach(layer => {
+      for (let i = 0; i < layer.max; i++) {
+        createGalaxy(layer);
+      }
+    });
+
+    setInterval(() => {
+      layers.forEach(layer => {
+        if (background.querySelectorAll(`.galaxy[data-layer="${layer.name}"]`).length < layer.max) {
+          createGalaxy(layer);
+        }
+      });
+    }, 2000);
+  </script>
+</body>
+</html>
