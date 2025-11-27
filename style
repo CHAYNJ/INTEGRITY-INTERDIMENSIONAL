@@ -159,3 +159,41 @@ body, html {
 .card .go:hover { background:#2cf2ff; }
 .chip { display:inline-block; padding:6px 12px; margin:3px; border-radius:20px; background:#2c2c2c; cursor:pointer; }
 .chip.active { background:#73e6ff; color:#121212; font-weight:bold; }
+
+/* === FLAME HEADER ANIMATION === */
+
+.portal-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #f2f2f2;
+  margin-top: 40px;
+  letter-spacing: 3px;
+  font-family: 'UnifrakturCook', cursive, sans-serif;
+}
+
+.flame {
+  display: inline-block;
+  animation: flameFlicker 1.7s infinite ease-in-out;
+  color: #ff9b30;
+  text-shadow:
+    0 0 4px #fff7c0,
+    0 -2px 8px #ffdd55,
+    0 -4px 14px #ff9900,
+    0 -6px 22px #cc5500,
+    0 -8px 30px #882200;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08) rotate(-2deg);
+    opacity: 0.85;
+  }
+  30%, 70% {
+    transform: scale(0.95) rotate(2deg);
+    opacity: 0.92;
+  }
+}
