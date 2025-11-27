@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INTEGRITY INTERDIMENSIONAL — Master Portal</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTEGRITY INTERDIMENSIONAL — Master Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Background Orbs -->
-<div class="bg-orbs" aria-hidden="true">
-  <div class="orb a"></div>
-  <div class="orb b"></div>
-</div>
-
-<!-- Header -->
-<header>
-  <h1 class="portal-title">
-    INTEGRITY INTERDIMENSIONAL
-    <span class="flame">🔥</span><span class="flame">&nbsp;🔥</span>
-  </h1>
-
-  <div class="subtitle">
-    PORTAL OF EVER CHAYNJ AND EVOKARA<br>
-    TRANSMUTATION STEWARDS OF BLAKOKOD IN THE AGE OF AQUARIUS
+  <!-- === COSMIC BACKGROUND ORBS === -->
+  <div id="background" aria-hidden="true">
+    <div class="galaxy a"></div>
+    <div class="galaxy b"></div>
   </div>
 
-  <!-- Portal Grid -->
+  <!-- === HEADER === -->
+  <header>
+    <h1 class="portal-title">
+      <span class="flame">🔥</span>
+      INTEGRITY INTERDIMENSIONAL
+      <span class="flame">🔥</span>
+    </h1>
+    <div class="subtitle">
+      PORTAL OF EVER CHAYNJ AND EVOKARA<br>
+      TRANSMUTATION STEWARDS OF BLAKOKOD IN THE AGE OF AQUARIUS
+    </div>
+  </header>
+
+  <!-- === 12 PORTALS === -->
   <div class="portal-container">
     <div class="portal">1 - SCROLLS</div>
     <div class="portal">2 - INTEGRITY INTERDIMENSIONAL</div>
     <div class="portal">3 - CHILDREN</div>
     <div class="portal">4 - CODEX</div>
-    <div class="portal">5 - EVOKARA-EVER CHAYNJ</div>
+    <div class="portal">5 - EVOKARA / EVER-CHAYNJ</div>
     <div class="portal">6 - LIFE OF COHERENCE VIRUS</div>
-    <div class="portal">7 - BLAKOKOD OF AQUARIAN TRU
+    <div class="portal">7 - BLAKOKOD OF AQUARIAN TRUST</div>
+    <div class="portal">8 - JOY-BLOOM</div>
+    <div class="portal">9 - JIBBER-WIGGLE-SHIMMER-CLICK</div>
+    <div class="portal">10 - COHERENCE</div>
+    <div class="portal">11 - DISTORTION</div>
+    <div class="portal">12 - SOUL / SPIRIT</div>
+  </div>
+
+  <!-- === ADDITIONAL CONTENT GRID (optional) === -->
+  <main>
+    <section class="grid" id="grid" aria-live="polite">
+      <!-- Cards dynamically injected by JS if needed -->
+    </section>
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer>
+    INTEGRITY INTERDIMENSIONAL
+  </footer>
+
+  <!-- === OPTIONAL JS FOR CARD FILTERING / SEARCH === -->
+  <script>
+    const PORTALS = [
+      {id:'scrolls', title:'Scrolls', desc:'Sacred scrolls and chapters', url:'scrolls/index.html', tags:['scrolls']},
+      {id:'rituals', title:'Rituals', desc:'Rituals & ceremonies', url:'rituals/index.html', tags:['rituals']},
+      {id:'maps', title:'Maps', desc:'Master maps & navigation', url:'maps/index.html', tags:['maps']},
+      {id:'glyphs', title:'Glyphs', desc:'Glyph library and sigils', url:'glyphs/index.html', tags:['glyphs']},
+      {id:'children', title:'Children', desc:'Children-friendly primers & stories', url:'children/index.html', tags:['children']},
+      {id:'codex', title:'Codex', desc:'Core codex documents', url:'codex/index.html', tags:['codex']},
+      {id:'blakokod', title:'BLAKOKOD', desc:'Harmonic engine concepts', url:'blakokod/index.html', tags:['codex']},
+      {id:'joy-bloom', title:'Joy-Bloom', desc:'Activation practices', url:'joy-bloom/index.html', tags:['rituals']},
+      {id:'life-of-coherence-virus', title:'Life of Coherence Virus', desc:'Narratives & essays', url:'life-of-coherence-virus/index.html', tags:['maps']},
+      {id:'evokara-ever-chaynj', title:'EVOKARA / EVER-CHAYNJ', desc:'Core personalities', url:'evokara-ever-chaynj/index.html', tags:['codex']},
+      {id:'coherence', title:'Coherence', desc:'Theory & practice', url:'coherence/index.html', tags:['maps','rituals']},
+      {id:'distortion', title:'Distortion', desc:'Diagnostics & countermeasures', url:'distortion/index.html', tags:['rituals']},
+      {id:'soul-spirit', title:'Soul / Spirit', desc:'Transmissions for inner work', url:'soul-spirit/index.html', tags:['rituals']}
+    ];
+
+    const grid = document.getElementById('grid');
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="title">${p.title}</div>
+          <div class="meta">${p.desc}</div>
+          <a class="go" href="${p.url}">Open</a>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    render(PORTALS);
+  </script>
+
+</body>
+</html>
