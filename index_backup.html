@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INTEGRITY INTERDIMENSIONAL — Master Portal</title>
+<style>
+  body{margin:0;font-family:sans-serif;background:#121212;color:#fff}
+  .bg-orbs{position:absolute;inset:0;overflow:hidden;z-index:0}
+  .orb.a{width:420px;height:420px;left:-60px;top:-40px;background:linear-gradient(90deg,#2cf2ff,#7b5cff);position:absolute;border-radius:50%;}
+  .orb.b{width:320px;height:320px;right:-60px;bottom:40px;background:linear-gradient(90deg,#ff7bff,#73e6ff);position:absolute;border-radius:50%;}
+  @media (max-width:640px){h1{font-size:1.4rem}.grid{padding:18px}}
+  .flame { display:inline-block; width:1em; animation: flicker 0.15s infinite alternate; }
+  @keyframes flicker {
+    0%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.2) translateY(-2px);opacity:0.8;}
+    100%{transform:scale(1) translateY(0);opacity:1;}
+  }
+</style>
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+  </div>
+  <header>
+    <h1>
+      <span class="flame">🔥</span>
+      INTEGRITY INTERDIMENSIONAL
+      <span class="flame">🔥</span>
+    </h1>
+    <div class="subtitle">Master Portal — quick access to Scrolls, Rituals, Maps, Glyphs and more</div>
+    <div class="controls">
+      <div class="search" role="search">
+        <input id="q" placeholder="Search pages, scroll titles, rituals, glyph names..." aria-label="Search" />
+        <button id="clear">Clear</button>
+      </div>
+    </div>
+    <div class="filters" id="filters" role="toolbar" aria-label="Filter portals">
+      <div class="chip active" data-filter="all">All</div>
+      <div class="chip" data-filter="scrolls">Scrolls</div>
+      <div class="chip" data-filter="rituals">Rituals</div>
+      <div class="chip" data-filter="maps">Maps</div>
+      <div class="chip" data-filter="glyphs">Glyphs</div>
+      <div class="chip" data-filter="children">Children</div>
+      <div class="chip" data-filter="codex">Codex</div>
+    </div>
+  </header>
+
+  <main style="position:relative;z-index:5">
+    <section class="grid" id="grid" aria-live="polite">
+      <!-- Cards injected by JS -->
+    </section>
+  </main>
+
+  <footer>INTEGRITY INTERDIMENSIONAL • EVOKARA — built for harmonic navigation</footer>
+
+<script>
+const PORTALS = [
+  {id:'scrolls', title:'Scrolls', desc:'Sacred scrolls and chapters', url:'scrolls/index.html', tags:['scrolls']},
+  {id:'rituals', title:'Rituals', desc:'Rituals & ceremonies', url:'rituals/index.html', tags:['rituals']},
+  {id:'maps', title:'Maps', desc:'Master maps & navigation', url:'maps/index.html', tags:['maps']},
+  {id:'glyphs', title:'Glyphs', desc:'Glyph library and sigils', url:'glyphs/index.html', tags:['glyphs']},
+  {id:'children', title:'Children', desc:'Children-friendly primers & stories', url:'children/index.html', tags:['children']},
+  {id:'codex', title:'Codex', desc:'Core codex documents', url:'codex/index.html', tags:['codex']},
+  {id:'blakokod', title:'BLAKOKOD', desc:'Harmonic engine concepts', url:'blakokod/index.html', tags:['codex']},
+  {id:'joy-bloom', title:'Joy-Bloom', desc:'Activation practices', url:'joy-bloom/index.html', tags:['rituals']},
+  {id:'life-of-coherence-virus', title:'Life of Coherence Virus', desc:'Narratives & essays', url:'life-of-coherence-virus/index.html', tags:['maps']},
+  {id:'evokara-ever-chaynj', title:'EVOKARA / EVER-CHAYNJ', desc:'Core personalities', url:'evokara-ever-chaynj/index.html', tags:['codex']},
+  {id:'coherence', title:'Coherence', desc:'Theory & practice', url:'coherence/index.html', tags:['maps','rituals']},
+  {id:'distortion', title:'Distortion', desc:'Diagnostics & countermeasures', url:'distortion/index.html', tags:['rituals']},
+  {id:'soul-spirit', title:'Soul / Spirit', desc:'Transmissions for inner work', url:'soul-spirit/index.html', tags:['rituals']}
+];
+
+const grid = document.getElementById('grid');
+function render(list){
+  grid.innerHTML = '';
+  list.forEach(p=>{
+    const card = document.createElement('article');
+    card.className='card';
+    card.innerHTML = 
+      <div class="title"></div>
+      <div class="meta"></div>
+      <a class="go" href="">Open</a>
+    ;
+    grid.appendChild(card);
+  });
+}
+render(PORTALS);
+
+const q = document.getElementById('q');
+const chips = Array.from(document.querySelectorAll('.chip'));
+chips.forEach(c=>{
+  c.addEventListener('click',()=>{
+    chips.forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    const f=c.dataset.filter;
+    if(f==='all') render(PORTALS); 
+    else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f));
+  });
+});
+q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();
+  if(!v){
+    const active=document.querySelector('.chip.active');
+    const f=active&&active.dataset.filter;
+    if(!f||f==='all') render(PORTALS); 
+    else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f));
+    return;
+  }
+  render(PORTALS.filter(p=>
+    p.title.toLowerCase().includes(v)||
+    p.desc.toLowerCase().includes(v)||
+    p.id.toLowerCase().includes(v)
+  ));
+});
+document.getElementById('clear').addEventListener('click',()=>{
+  q.value='';
+  q.dispatchEvent(new Event('input'));
+});
+</script>
+
+</body>
+</html>
