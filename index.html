@@ -56,6 +56,7 @@
   <footer>INTEGRITY INTERDIMENSIONAL • EVOKARA — built for harmonic navigation</footer>
 
 <script>
+// JS code to render portals and search/filter functionality
 const PORTALS = [
   {id:'scrolls', title:'Scrolls', desc:'Sacred scrolls and chapters', url:'scrolls/index.html', tags:['scrolls']},
   {id:'rituals', title:'Rituals', desc:'Rituals & ceremonies', url:'rituals/index.html', tags:['rituals']},
@@ -71,53 +72,14 @@ const PORTALS = [
   {id:'distortion', title:'Distortion', desc:'Diagnostics & countermeasures', url:'distortion/index.html', tags:['rituals']},
   {id:'soul-spirit', title:'Soul / Spirit', desc:'Transmissions for inner work', url:'soul-spirit/index.html', tags:['rituals']}
 ];
-
-const grid = document.getElementById('grid');
-function render(list){
-  grid.innerHTML = '';
-  list.forEach(p=>{
-    const card = document.createElement('article');
-    card.className='card';
-    card.innerHTML = 
-      <div class="title"></div>
-      <div class="meta"></div>
-      <a class="go" href="">Open</a>
-    ;
-    grid.appendChild(card);
-  });
-}
+const grid=document.getElementById('grid');
+function render(list){grid.innerHTML=''; list.forEach(p=>{const card=document.createElement('article'); card.className='card'; card.innerHTML=<div class="title"></div><div class="meta"></div><a class="go" href="">Open</a>; grid.appendChild(card);});}
 render(PORTALS);
-
-const q = document.getElementById('q');
-const chips = Array.from(document.querySelectorAll('.chip'));
-chips.forEach(c=>{
-  c.addEventListener('click',()=>{
-    chips.forEach(x=>x.classList.remove('active'));
-    c.classList.add('active');
-    const f=c.dataset.filter;
-    if(f==='all') render(PORTALS); 
-    else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f));
-  });
-});
-q.addEventListener('input',()=>{
-  const v=q.value.trim().toLowerCase();
-  if(!v){
-    const active=document.querySelector('.chip.active');
-    const f=active&&active.dataset.filter;
-    if(!f||f==='all') render(PORTALS); 
-    else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f));
-    return;
-  }
-  render(PORTALS.filter(p=>
-    p.title.toLowerCase().includes(v)||
-    p.desc.toLowerCase().includes(v)||
-    p.id.toLowerCase().includes(v)
-  ));
-});
-document.getElementById('clear').addEventListener('click',()=>{
-  q.value='';
-  q.dispatchEvent(new Event('input'));
-});
+const q=document.getElementById('q');
+const chips=Array.from(document.querySelectorAll('.chip'));
+chips.forEach(c=>{c.addEventListener('click',()=>{chips.forEach(x=>x.classList.remove('active')); c.classList.add('active'); const f=c.dataset.filter; if(f==='all') render(PORTALS); else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f));});});
+q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase(); if(!v){const active=document.querySelector('.chip.active'); const f=active&&active.dataset.filter; if(!f||f==='all') render(PORTALS); else render(PORTALS.filter(p=>p.tags.includes(f)||p.id===f)); return;} render(PORTALS.filter(p=>p.title.toLowerCase().includes(v)||p.desc.toLowerCase().includes(v)||p.id.toLowerCase().includes(v)));});
+document.getElementById('clear').addEventListener('click',()=>{q.value=''; q.dispatchEvent(new Event('input'));});
 </script>
 
 </body>
