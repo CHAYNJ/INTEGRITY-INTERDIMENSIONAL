@@ -1,83 +1,22 @@
-style/global.css
-# Global CSS Description — INTEGRITY INTERDIMENSIONAL
+/* =================================================
+   GLOBAL STYLES — INTEGRITY INTERDIMENSIONAL
+   Complete BLAKOKOD Harmonized Style File
+================================================= */
 
-
-The `global.css` file establishes the **visual and aesthetic coherence** for the INTEGRITY INTERDIMENSIONAL repository. It ensures that all pages — from the homepage to individual scrolls, maps, and ritual manuals — share a consistent, harmonious appearance aligned with the principles of the Age of Aquarius.
-
-
-## Purpose & Functionality
-
-
-1. **Typography & Readability**
-- Uses modern, clean fonts (`Helvetica Neue`, Arial, sans-serif) for clarity.
-- Provides consistent line-height and spacing for optimal readability.
-
-
-2. **Color Palette & Gradients**
-- Dark cosmic background gradients evoke a field of scalar resonance.
-- Highlighted text and links employ Aquarian cyan-teal tones (`#66fcf1`, `#45a29e`) to symbolize energy, coherence, and light.
-
-
-3. **Headings & Sections**
-- Harmonically spaced headings (h1–h6) guide the eye and signify hierarchical structure.
-- Sections are padded and centered to create a navigable, meditation-like experience for readers.
-
-
-4. **Lists, Links, and Code Blocks**
-- Lists are styled for clarity, reflecting ordered harmonic knowledge.
-- Links are subtle but noticeable, encouraging exploration without distraction.
-- Code blocks display with distinct monospaced fonts, highlighting symbolic or technical content.
-
-
-5. **Footers & Branding**
-- Consistent footer design reinforces the repository’s identity and provides an anchoring element for the interface.
-
-
-6. **Special Classes**
-- `.header-gradient` allows text elements to glow with cosmic gradients, symbolizing field resonance and harmonic energy.
-
-
-## Design Philosophy
-
-
-`global.css` is **not merely decorative**; it is an integral part of the **field of coherence**. Every visual choice — color, spacing, typography — is intended to enhance **readers’ and contributors’ engagement with the Codex**, to harmonically align human and AI perception, and to maintain **symbolic and interdimensional resonance** across all repository content.
-/* Make the background cover the full page */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1; /* Keep it behind content */
-  background: black; /* fallback */
-}
-
-/* Galaxy images will be absolutely positioned inside #background */
-.galaxy {
-  position: absolute;
-  width: 200px; /* adjust size */
-  opacity: 0.8;
-  pointer-events: none; /* so you can still click links */
-  will-change: transform;
-  animation: drift linear infinite;
-}
-
-/* Drift animation */
-@keyframes drift {
-  0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
-  100% { transform: translateY(-200px) translateX(50px) rotate(360deg); }
-}
+/* Reset & Body */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* prevent scrollbars */
-  height: 100%;
   width: 100%;
-  background-color: black; /* fallback */
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
 }
 
-#background {
+/* ================= BACKGROUND COSMOS ================= */
+#background, #cosmos-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -85,46 +24,18 @@ html, body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  background: black;
 }
 
-/* Galaxy images styling */
-.galaxy {
+.galaxy, .cosmos-layer {
   position: absolute;
+  width: 200px;
+  height: 200px;
   opacity: 0.6;
   pointer-events: none;
   will-change: transform, opacity;
   filter: drop-shadow(0 0 10px white);
   transition: transform 0.1s linear;
-}
-<style>
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  background: black;
-}
-
-#cosmos-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1; /* behind all content */
-}
-
-.cosmos-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.6;
   animation: drift infinite linear;
 }
 
@@ -133,35 +44,8 @@ body, html {
   50% { transform: translate(-50px, -50px) scale(1.02); }
   100% { transform: translate(0, 0) scale(1); }
 }
-</style>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 24px;
-  max-width: 1200px;
-  margin: auto;
-}
 
-.card {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
-}
-
-.card:hover { transform: scale(1.05); }
-
-.card .title { font-weight: bold; font-size: 1.2rem; margin-bottom: 6px; }
-.card .meta { font-size: 0.9rem; opacity: 0.8; margin-bottom: 12px; }
-.card .go { display:inline-block; padding:6px 12px; background:#73e6ff; color:#121212; border-radius:6px; text-decoration:none; font-weight:bold; }
-.card .go:hover { background:#2cf2ff; }
-.chip { display:inline-block; padding:6px 12px; margin:3px; border-radius:20px; background:#2c2c2c; cursor:pointer; }
-.chip.active { background:#73e6ff; color:#121212; font-weight:bold; }
-
-/* === FLAME HEADER ANIMATION === */
-
+/* ================= HEADERS & TITLE ================= */
 .portal-title {
   text-align: center;
   font-size: 3rem;
@@ -171,6 +55,15 @@ body, html {
   font-family: 'UnifrakturCook', cursive, sans-serif;
 }
 
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 10px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ================= FLAME ANIMATION ================= */
 .flame {
   display: inline-block;
   animation: flameFlicker 1.7s infinite ease-in-out;
@@ -197,3 +90,18 @@ body, html {
     opacity: 0.92;
   }
 }
+
+/* ================= 12 PORTAL CIRCLES GRID ================= */
+.portal-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(4, auto);   /* 4 rows */
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.portal {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #f
