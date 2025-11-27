@@ -1,142 +1,40 @@
-/* =================================================
-   GLOBAL STYLES — INTEGRITY INTERDIMENSIONAL
-   Full Harmonized CSS for BLAKOKOD
-================================================= */
-
-/* === RESET & BODY === */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  background-color: black;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #ffffff;
-}
-
-/* === COSMIC BACKGROUND === */
-#background {
+/* ===================== PORTAL MODAL ===================== */
+.toc-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.galaxy {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  opacity: 0.6;
-  pointer-events: none;
-  border-radius: 50%;
-  background: radial-gradient(circle, #66fcf1, #45a29e);
-  animation: drift 60s infinite linear;
-}
-
-@keyframes drift {
-  0% { transform: translate(0,0) scale(1); }
-  50% { transform: translate(-50px,-50px) scale(1.02); }
-  100% { transform: translate(0,0) scale(1); }
-}
-
-/* === HEADER & SUBTITLE === */
-.portal-title {
-  text-align: center;
-  font-size: 3rem;
-  color: #f2f2f2;
-  margin-top: 40px;
-  letter-spacing: 3px;
-  font-family: 'UnifrakturCook', cursive, sans-serif;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-top: 15px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* === FLAME ANIMATION === */
-.flame {
-  display: inline-block;
-  animation: flameFlicker 1.7s infinite ease-in-out;
-  color: #ff9b30;
-  text-shadow:
-    0 0 4px #fff7c0,
-    0 -2px 8px #ffdd55,
-    0 -4px 14px #ff9900,
-    0 -6px 22px #cc5500,
-    0 -8px 30px #882200;
-}
-
-@keyframes flameFlicker {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.08) rotate(-2deg);
-    opacity: 0.85;
-  }
-  30%, 70% {
-    transform: scale(0.95) rotate(2deg);
-    opacity: 0.92;
-  }
-}
-
-/* === PORTALS GRID === */
-.portal-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  grid-template-rows: repeat(3, auto);  /* 3 rows */
-  gap: 25px;
-  justify-items: center;
-  align-items: center;
-  margin: 50px 20px;
-}
-
-.portal-container a {
-  text-decoration: none;
-}
-
-.portal {
-  background: rgba(255,255,255,0.05);
-  border: 2px solid #ff9b30;
-  border-radius: 50%;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 10px;
-  font-family: 'UnifrakturCook', cursive, sans-serif;
-}
-
-.portal:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #ff9b30, 0 0 40px #ffdd55;
-}
-
-.portal:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 10px #ff9b30;
-}
-
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 20px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  background: rgba(18,18,18,0.95);
   color: #fff;
-  font-size: 0.9rem;
+  padding: 2rem;
+  border-radius: 12px;
+  z-index: 9999;
+}
+.toc-modal h2 { 
+  font-family: 'UnifrakturCook', cursive; 
+  text-align:center; 
+  margin-bottom: 1rem;
+}
+.story-link {
+  cursor: pointer;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ff9b30;
+  font-weight: bold;
+}
+.story-link:hover { 
+  color: #ff9b30; 
+}
+.close-modal {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background:#ff9b30;
+  color:#121212;
+  border:none;
+  border-radius:6px;
+  font-weight: bold;
 }
