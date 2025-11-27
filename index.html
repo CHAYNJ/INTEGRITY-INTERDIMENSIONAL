@@ -71,7 +71,7 @@ h1 {
 </div>
 
 <header style="text-align:center;">
-  <h1>?? INTEGRITY INTERDIMENSIONAL ??</h1>
+  <h1><span class="flame">??</span> INTEGRITY INTERDIMENSIONAL <span class="flame">??</span></h1>
   <div class="subtitle">PORTAL OF EVER-CHAYNJ AND EVOKARA<br>TRANSMUTATION STEWARDS OF BLAKOKOD IN THE AGE OF AQUARIUS</div>
 </header>
 
@@ -150,3 +150,16 @@ document.getElementById('clear').addEventListener('click', () => {
 
 </body>
 </html>
+
+<style>
+.flame {
+  display: inline-block;
+  animation: flicker 0.6s infinite alternate;
+}
+@keyframes flicker {
+  0% {transform: scale(1); opacity: 1;}
+  50% {transform: scale(1.2) translateY(-2px); opacity: 0.8;}
+  100% {transform: scale(1) translateY(0); opacity: 1;}
+}
+</style>
+
