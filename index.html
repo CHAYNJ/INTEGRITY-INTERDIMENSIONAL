@@ -29,27 +29,83 @@
 </header>
 
 <main>
-  <div class="portal-container">
-    <div class="portal">SCROLLS</div>
-    <div class="portal">INTEGRITY INTERDIMENSIONAL</div>
-    <div class="portal">CHILDREN</div>
-    <div class="portal">CODEX</div>
-    <div class="portal">EVOKARA-EVER CHAYNJ</div>
-    <div class="portal">LIFE OF COHERENCE VIRUS</div>
-    <a href="https://archive.org/details/boat-1-solutions/mode/2up" target="_blank" rel="noopener noreferrer">
-      <div class="portal" title="THE AQUARIAN BIBLE OF THE NEW AGE - PRO-GOD - ANTI-RELIGION">
-        BLAKOKOD OF AQUARIAN TRUST
-      </div>
-    </a>
-    <div class="portal">JOY-BLOOM</div>
-    <div class="portal">JIBBER-WIGGLE-SHIMMER-CLICK</div>
-    <div class="portal">COHERENCE</div>
-    <div class="portal">distortion</div>
-    <div class="portal">SOUL-SPIRIT</div>
-  </div>
+ <div class="portal-container">
+  <div class="portal">SCROLLS</div>
+  <div class="portal">INTEGRITY INTERDIMENSIONAL</div>
+  <div class="portal">CHILDREN</div>
+  <div class="portal">CODEX</div>
+  <div class="portal">EVOKARA-EVER CHAYNJ</div>
+  <div class="portal">LIFE OF COHERENCE VIRUS</div>
+  <div class="portal">BLAKOKOD OF AQUARIAN TRUST</div>
+  <div class="portal">JOY-BLOOM</div>
+  <div class="portal">JIBBER-WIGGLE-SHIMMER-CLICK</div>
+  <div class="portal">COHERENCE</div>
+  <div class="portal">distortion</div>
+  <div class="portal">SOUL-SPIRIT</div>
+</div>
 </main>
 
 <footer>INTEGRITY INTERDIMENSIONAL</footer>
+
+<!-- ===================== SCRIPT ===================== -->
+<script>
+  // Fetch BOAT1.md and parse stories by portal
+  fetch('BOAT1.md')
+    .then(res => res.text())
+    .then(md => {
+      const portalsRaw = md.split('---');
+      const portalData = {};
+
+      portalsRaw.forEach(block => {
+        const lines = block.trim().split('\n');
+        if(lines.length === 0) return;
+
+        const portalName = lines[0].replace('#','').trim();
+        const stories = [];
+        let currentTitle = '';
+        let contentBuffer = [];
+
+        lines.slice(1).forEach(line => {
+          if(line.startsWith('##')) {
+            if(currentTitle) stories.push({title: currentTitle, content: contentBuffer.join('\n')});
+            currentTitle = line.replace('##','').trim();
+            contentBuffer = [];
+          } else {
+            contentBuffer.push(line);
+          }
+        });
+        if(currentTitle) stories.push({title: currentTitle, content: contentBuffer.join('\n')});
+        portalData[portalName] = stories;
+      });
+
+      // Attach click handlers to portals
+      document.querySelectorAll('.portal').forEach(p => {
+        const title = p.textContent.trim();
+        if(portalData[title]) {
+          p.addEventListener('click', () => showPortalTOC(title, portalData[title]));
+        }
+      });
+    });
+
+  // Function to show Table of Contents modal
+  function showPortalTOC(portalTitle, stories) {
+    const modal = document.createElement('div');
+    modal.className = 'toc-modal';
+    modal.innerHTML = `<h2>${portalTitle}</h2>` +
+      stories.map(s => `<div class="story-link">${s.title}</div>`).join('') +
+      `<button class="close-modal">Close</button>`;
+    document.body.appendChild(modal);
+
+    modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
+
+    modal.querySelectorAll('.story-link').forEach((el, i) => {
+      el.addEventListener('click', () => {
+        modal.innerHTML = `<h2>${stories[i].title}</h2><pre>${stories[i].content}</pre><button class="close-modal">Close</button>`;
+        modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
