@@ -104,4 +104,57 @@ html, body {
 
 .portal {
   background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #f
+  border: 2px solid #ff9b30;
+  border-radius: 50%; /* circle shape */
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  font-family: 'UnifrakturCook', cursive, sans-serif;
+}
+
+.portal:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ff9b30, 0 0 40px #ffdd55;
+}
+
+.portal:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px #ff9b30;
+}
+
+/* ================= CARDS / GRID SECTIONS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: scale(1.05); }
+
+.card .title { font-weight: bold; font-size: 1.2rem; margin-bottom: 6px; }
+.card .meta { font-size: 0.9rem; opacity: 0.8; margin-bottom: 12px; }
+.card .go { display:inline-block; padding:6px 12px; background:#73e6ff; color:#121212; border-radius:6px; text-decoration:none; font-weight:bold; }
+.card .go:hover { background:#2cf2ff; }
+
+.chip { display:inline-block; padding:6px 12px; margin:3px; border-radius:20px; background:#2c2c2c; cursor:pointer; }
+.chip.active { background:#73e6ff; color:#121212; font-weight:bold; font-family: 'Helvetica Neue', Arial, sans-serif; }
