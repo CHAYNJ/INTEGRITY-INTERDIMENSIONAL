@@ -1,6 +1,6 @@
 /* =================================================
    GLOBAL STYLES — INTEGRITY INTERDIMENSIONAL
-   Full Harmonized CSS for BLAKOKOD
+   Harmonized CSS for BLAKOKOD Homepage
 ================================================= */
 
 /* === RESET & BODY === */
@@ -9,7 +9,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: black;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #ffffff;
@@ -44,117 +44,3 @@ html, body {
   50% { transform: translate(-50px, -50px) scale(1.02); }
   100% { transform: translate(0, 0) scale(1); }
 }
-
-/* === HEADER & SUBTITLE === */
-.portal-title {
-  text-align: center;
-  font-size: 3rem;
-  color: #f2f2f2;
-  margin-top: 40px;
-  letter-spacing: 3px;
-  font-family: 'UnifrakturCook', cursive, sans-serif;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-top: 10px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* === FLAME ANIMATION === */
-.flame {
-  display: inline-block;
-  animation: flameFlicker 1.7s infinite ease-in-out;
-  color: #ff9b30;
-  text-shadow:
-    0 0 4px #fff7c0,
-    0 -2px 8px #ffdd55,
-    0 -4px 14px #ff9900,
-    0 -6px 22px #cc5500,
-    0 -8px 30px #882200;
-}
-
-@keyframes flameFlicker {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.08) rotate(-2deg);
-    opacity: 0.85;
-  }
-  30%, 70% {
-    transform: scale(0.95) rotate(2deg);
-    opacity: 0.92;
-  }
-}
-
-/* === 12 PORTALS GRID === */
-.portal-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: repeat(4, auto);   /* 4 rows */
-  gap: 30px;
-  justify-items: center;
-  align-items: center;
-  margin: 50px 0;
-}
-
-.portal {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #ff9b30;
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: center;
-  color: #ffffff;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px;
-  font-family: 'UnifrakturCook', cursive, sans-serif;
-}
-
-.portal:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px #ff9b30, 0 0 40px #ffdd55;
-}
-
-.portal:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 10px #ff9b30;
-}
-
-/* === GRID & CARDS (for additional sections) === */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 24px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.card {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
-}
-
-.card:hover { transform: scale(1.05); }
-
-.card .title { font-weight: bold; font-size: 1.2rem; margin-bottom: 6px; }
-.card .meta { font-size: 0.9rem; opacity: 0.8; margin-bottom: 12px; }
-.card .go { display:inline-block; padding:6px 12px; background:#73e6ff; color:#121212; border-radius:6px; text-decoration:none; font-weight:bold; }
-.card .go:hover { background:#2cf2ff; }
-
-.chip { display:inline-block; padding:6px 12px; margin:3px; border-radius:20px; background:#2c2c2c; cursor:pointer; }
-.chip.active { background:#73e6ff; color:#121212; font-weight:bold; font-family: 'Helvetica Neue', Arial, sans-serif; }
