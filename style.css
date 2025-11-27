@@ -1,117 +1,26 @@
-/* =================================================
-   GLOBAL STYLES — INTEGRITY INTERDIMENSIONAL
-================================================= */
-
-/* === RESET & BODY === */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #ffffff;
-  background-color: #121212;
-  overflow-x: hidden;
-}
-
-/* === COSMIC BACKGROUND === */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.galaxy {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, #66fcf1 0%, #0b0c10 100%);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: drift 60s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes drift {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, -50px) scale(1.05); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-/* === HEADER & SUBTITLE === */
-header {
-  text-align: center;
-  padding: 80px 20px 40px 20px;
-}
-
-.portal-title {
-  font-family: 'UnifrakturCook', cursive, sans-serif;
-  font-size: 3rem;
-  letter-spacing: 3px;
-  color: #f2f2f2;
-  margin: 0;
-}
-
-.subtitle {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.5rem;
-  margin-top: 20px;
-  color: #ffffff;
-}
-
-/* === FLAME ANIMATION === */
-.flame {
-  display: inline-block;
-  animation: flameFlicker 1.7s infinite ease-in-out;
-  color: #ff9b30;
-  text-shadow:
-    0 0 4px #fff7c0,
-    0 -2px 8px #ffdd55,
-    0 -4px 14px #ff9900,
-    0 -6px 22px #cc5500,
-    0 -8px 30px #882200;
-}
-
-@keyframes flameFlicker {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
-  50% { transform: scale(1.08) rotate(-2deg); opacity: 0.85; }
-  30%, 70% { transform: scale(0.95) rotate(2deg); opacity: 0.92; }
-}
-
-/* === PORTAL GRID === */
-.portal-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-  justify-items: center;
-  align-items: center;
-  padding: 40px 80px;
-}
-
+/* === PORTAL STYLING FOR <a> ELEMENTS === */
 .portal {
+  display: flex; /* makes divs and links behave the same */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 180px;
+  height: 180px;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #ff9b30;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-align: center;
   color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
   cursor: pointer;
+  padding: 20px;
+  font-family: 'UnifrakturCook', cursive, sans-serif;
+  text-decoration: none; /* remove underline for links */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 10px;
 }
 
 .portal:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
   box-shadow: 0 0 20px #ff9b30, 0 0 40px #ffdd55;
 }
 
@@ -120,10 +29,19 @@ header {
   box-shadow: 0 0 10px #ff9b30;
 }
 
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 20px;
+/* Optional: Ensure tooltips display nicely on hover */
+.portal[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
   font-size: 0.9rem;
-  color: #ffffff;
+  white-space: nowrap;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 50;
 }
