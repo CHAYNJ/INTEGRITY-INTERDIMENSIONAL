@@ -120,3 +120,34 @@ footer { text-align:center; padding:26px 12px; color:#cfcfcf; font-size:13px; }
   from { transform: rotate(0deg) scale(1); }
   to   { transform: rotate(360deg) scale(1.15); }
 }
+/* ================= AQUARIAN TOOLTIP FOR PORTAL-BUTTON ================= */
+.portal-button {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tooltip itself */
+.portal-button:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  box-shadow: 0 0 12px rgba(255,155,48,0.45);
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: tooltipFade 0.16s ease-out;
+}
+
+/* Tooltip animation */
+@keyframes tooltipFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
