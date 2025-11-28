@@ -32,6 +32,7 @@
   <!-- PORTAL GRID -->
   <main>
     <div class="portal-container" role="list">
+
       <button class="portal" role="listitem" data-title="SCROLLS">SCROLLS</button>
       <button class="portal" role="listitem" data-title="INTEGRITY INTERDIMENSIONAL">INTEGRITY INTERDIMENSIONAL</button>
       <button class="portal" role="listitem" data-title="CHILDREN">CHILDREN</button>
@@ -40,16 +41,20 @@
       <button class="portal" role="listitem" data-title="EVOKARA-EVER CHAYNJ">EVOKARA-EVER CHAYNJ</button>
       <button class="portal" role="listitem" data-title="LIFE OF COHERENCE VIRUS">LIFE OF COHERENCE VIRUS</button>
 
-      <!-- BLAKOKOD portal: has archive url -->
-      <button class="portal" role="listitem" data-title="BLAKOKOD OF AQUARIAN TRUST" data-archive="https://archive.org/details/boat-1-solutions/mode/2up">
+      <!-- BLAKOKOD portal with tooltip + archive link -->
+      <a href="https://archive.org/details/boat-1-solutions/mode/2up"
+         class="portal-button"
+         data-tip="THE BIBLE OF THE NEW AQUARIAN AGE"
+         role="listitem">
         BLAKOKOD OF AQUARIAN TRUST
-      </button>
+      </a>
 
       <button class="portal" role="listitem" data-title="JOY-BLOOM">JOY-BLOOM</button>
       <button class="portal" role="listitem" data-title="JIBBER-WIGGLE-SHIMMER-CLICK">JIBBER-WIGGLE-SHIMMER-CLICK</button>
       <button class="portal" role="listitem" data-title="COHERENCE">COHERENCE</button>
       <button class="portal" role="listitem" data-title="distortion">distortion</button>
       <button class="portal" role="listitem" data-title="SOUL-SPIRIT">SOUL-SPIRIT</button>
+
     </div>
   </main>
 
@@ -61,191 +66,17 @@
   <!-- ======= SCRIPT: parse BOAT1.md and show modal TOC ======= -->
   <script>
   (function () {
-    const BMD = 'BOAT1.md'; // file with portal groups separated by --- and headings (# Portal, ## Story)
-    let portalData = {}; // portalName -> [{title, content}, ...]
+    const BMD = 'BOAT1.md';
+    let portalData = {};
 
-    // Basic markdown-to-HTML helper (very small subset: ## -> h3, ## -> h3, paragraphs)
     function mdToHtml(md) {
-      // Escape first
       const esc = md.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      // Convert headings and line breaks simply
       let html = esc
         .replace(/^###\s*(.*$)/gim, '<h4>$1</h4>')
         .replace(/^##\s*(.*$)/gim, '<h3>$1</h3>')
         .replace(/^#\s*(.*$)/gim, '<h2>$1</h2>')
         .replace(/\n{2,}/g, '</p><p>');
-      // wrap paragraphs
       html = '<p>' + html + '</p>';
-      // fix empty paragraphs
       html = html.replace(/<p>\s*<\/p>/g, '');
-      // convert inline newlines to <br>
       html = html.replace(/\n/g, '<br>');
-      return html;
-    }
-
-    // Build and show modal
-    function showPortalTOC(portalTitle, stories, archiveUrl) {
-      // Remove existing
-      const root = document.getElementById('toc-root');
-      root.innerHTML = '';
-      root.setAttribute('aria-hidden','false');
-
-      const modal = document.createElement('div');
-      modal.className = 'toc-modal';
-      modal.setAttribute('role','dialog');
-      modal.setAttribute('aria-modal','true');
-      modal.innerHTML = `
-        <header class="toc-header">
-          <h2>${portalTitle}</h2>
-          <button class="toc-close" aria-label="Close">✕</button>
-        </header>
-        <div class="toc-body"></div>
-        <footer class="toc-footer"></footer>
-      `;
-      root.appendChild(modal);
-
-      const body = modal.querySelector('.toc-body');
-      const footer = modal.querySelector('.toc-footer');
-      const closeBtn = modal.querySelector('.toc-close');
-
-      // If an archive url is provided, offer quick open
-      if (archiveUrl) {
-        const a = document.createElement('a');
-        a.className = 'open-archive';
-        a.href = archiveUrl;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.textContent = 'Open Sacred Book';
-        footer.appendChild(a);
-      }
-
-      // Build TOC
-      if (!stories || stories.length === 0) {
-        body.innerHTML = '<p><em>No stories found for this portal.</em></p>';
-      } else {
-        const list = document.createElement('ol');
-        list.className = 'toc-list';
-        stories.forEach((s, i) => {
-          const li = document.createElement('li');
-          li.className = 'toc-item';
-          li.innerHTML = `
-            <button class="toc-link" data-idx="${i}">${s.title || 'Untitled'}</button>
-          `;
-          list.appendChild(li);
-        });
-        body.appendChild(list);
-
-        // story click -> show story content
-        body.querySelectorAll('.toc-link').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const idx = +btn.getAttribute('data-idx');
-            body.innerHTML = `
-              <article class="story-article">
-                <h3>${stories[idx].title || 'Untitled'}</h3>
-                <div class="story-content">${mdToHtml(stories[idx].content || '')}</div>
-                <div style="margin-top:1rem"><button class="back-to-toc">Back to list</button></div>
-              </article>
-            `;
-            const back = body.querySelector('.back-to-toc');
-            back.addEventListener('click', () => showPortalTOC(portalTitle, stories, archiveUrl));
-          });
-        });
-      }
-
-      // close
-      closeBtn.addEventListener('click', closeModal);
-      // close on escape
-      function escHandler(e){ if(e.key==='Escape') closeModal(); }
-      document.addEventListener('keydown', escHandler);
-
-      function closeModal(){
-        document.removeEventListener('keydown', escHandler);
-        root.innerHTML = '';
-        root.setAttribute('aria-hidden','true');
-        // return focus to first portal button with same title if exists
-        const btn = Array.from(document.querySelectorAll('.portal')).find(b => b.dataset.title === portalTitle);
-        if(btn) btn.focus();
-      }
-
-      // focus the first interactive element
-      const first = modal.querySelector('.toc-link, .open-archive, .toc-close');
-      if(first) first.focus();
-    }
-
-    // Parse BOAT1.md format:
-    // Blocks are separated by lines containing only '---'
-    // Each block begins with a line '# PORTAL NAME'
-    // Story titles are '## Story Title' lines and content follows until next '##' or end
-    function parseBoatMarkdown(text){
-      const blocks = text.split(/\n-{3,}\n/); // split on line with --- (flexible)
-      const out = {};
-      blocks.forEach(block => {
-        const lines = block.split('\n');
-        // find first non-empty line to be portal heading
-        let firstLineIndex = lines.findIndex(l => l.trim().length>0);
-        if(firstLineIndex === -1) return;
-        let portalHeading = lines[firstLineIndex].replace(/^#\s*/,'').trim();
-        if(!portalHeading) {
-          // if no heading, skip
-          return;
-        }
-        // collect stories
-        const storyList = [];
-        let currentTitle = '';
-        let buffer = [];
-        for(let i = firstLineIndex+1; i < lines.length; i++){
-          const line = lines[i];
-          if(line.startsWith('## ')){
-            if(currentTitle) storyList.push({title: currentTitle.trim(), content: buffer.join('\n').trim()});
-            currentTitle = line.replace(/^##\s*/,'').trim();
-            buffer = [];
-          } else {
-            buffer.push(line);
-          }
-        }
-        // push last
-        if(currentTitle) storyList.push({title: currentTitle.trim(), content: buffer.join('\n').trim()});
-        // if no '##' headings found, treat whole remainder as a single story
-        if(storyList.length === 0){
-          const remainder = lines.slice(firstLineIndex+1).join('\n').trim();
-          if(remainder) storyList.push({title: portalHeading + ' — Entry', content: remainder});
-        }
-        out[portalHeading] = storyList;
-      });
-      return out;
-    }
-
-    // Fetch and wire portals
-    fetch(BMD).then(r => {
-      if(!r.ok) { console.warn('BOAT1.md not found (HTTP ' + r.status + ')'); return {}; }
-      return r.text();
-    }).then(txt => {
-      if(!txt) return;
-      portalData = parseBoatMarkdown(txt);
-      // Attach handlers to portal buttons
-      document.querySelectorAll('.portal').forEach(btn => {
-        const key = (btn.dataset.title || '').trim();
-        // match exact, or case-insensitive fallback
-        const found = portalData[key] || portalData[key.toUpperCase()] || portalData[key.toLowerCase()];
-        const archive = btn.dataset.archive || null;
-        if(found){
-          btn.addEventListener('click', () => showPortalTOC(key, found, archive));
-          btn.classList.add('has-content');
-        } else {
-          // no content: still allow click to show "no stories" modal
-          btn.addEventListener('click', () => showPortalTOC(key, [], archive));
-        }
-      });
-    }).catch(err => {
-      console.error('Error fetching BOAT1.md', err);
-      // still attach buttons to show empty modal
-      document.querySelectorAll('.portal').forEach(btn => {
-        const key = (btn.dataset.title || '').trim();
-        const archive = btn.dataset.archive || null;
-        btn.addEventListener('click', () => showPortalTOC(key, [], archive));
-      });
-    });
-  })();
-  </script>
-</body>
-</html>
+      re
