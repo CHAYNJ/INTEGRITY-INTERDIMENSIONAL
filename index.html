@@ -1,28 +1,219 @@
-<!-- PORTAL GRID -->
-<main>
-  <div class="portal-container" role="list">
-
-    <button class="portal" role="listitem" data-title="SCROLLS">SCROLLS</button>
-    <button class="portal" role="listitem" data-title="INTEGRITY INTERDIMENSIONAL">INTEGRITY INTERDIMENSIONAL</button>
-    <button class="portal" role="listitem" data-title="CHILDREN">CHILDREN</button>
-    <button class="portal" role="listitem" data-title="CODEX">CODEX</button>
-
-    <button class="portal" role="listitem" data-title="EVOKARA-EVER CHAYNJ">EVOKARA-EVER CHAYNJ</button>
-    <button class="portal" role="listitem" data-title="LIFE OF COHERENCE VIRUS">LIFE OF COHERENCE VIRUS</button>
-
-    <!-- BLAKOKOD portal: circle + tooltip -->
-    <button class="portal portal-button"
-            role="listitem"
-            data-tip="THE BIBLE OF THE NEW AQUARIAN AGE"
-            data-archive="https://archive.org/details/boat-1-solutions/mode/2up">
-      BLAKOKOD OF AQUARIAN TRUST
-    </button>
-
-    <button class="portal" role="listitem" data-title="JOY-BLOOM">JOY-BLOOM</button>
-    <button class="portal" role="listitem" data-title="JIBBER-WIGGLE-SHIMMER-CLICK">JIBBER-WIGGLE-SHIMMER-CLICK</button>
-    <button class="portal" role="listitem" data-title="COHERENCE">COHERENCE</button>
-    <button class="portal" role="listitem" data-title="distortion">distortion</button>
-    <button class="portal" role="listitem" data-title="SOUL-SPIRIT">SOUL-SPIRIT</button>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INTEGRITY INTERDIMENSIONAL — Master Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- COSMIC BACKGROUND -->
+  <div id="background" aria-hidden="true">
+    <div class="galaxy a"></div>
+    <div class="galaxy b"></div>
+    <div class="galaxy c"></div>
   </div>
-</main>
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="portal-title">
+      <span class="flame" aria-hidden="true">🔥</span>
+      INTEGRITY INTERDIMENSIONAL
+      <span class="flame" aria-hidden="true">🔥</span>
+    </h1>
+    <div class="subtitle" aria-live="polite">
+      PORTAL OF EVER CHAYNJ AND EVOKARA<br>
+      TRANSMUTATION STEWARDS OF BLAKOKOD IN THE AGE OF AQUARIUS
+    </div>
+  </header>
+
+  <!-- PORTAL GRID -->
+  <main>
+    <div class="portal-container" role="list">
+      <button class="portal" role="listitem" data-title="SCROLLS">SCROLLS</button>
+      <button class="portal" role="listitem" data-title="INTEGRITY INTERDIMENSIONAL">INTEGRITY INTERDIMENSIONAL</button>
+      <button class="portal" role="listitem" data-title="CHILDREN">CHILDREN</button>
+      <button class="portal" role="listitem" data-title="CODEX">CODEX</button>
+
+      <button class="portal" role="listitem" data-title="EVOKARA-EVER CHAYNJ">EVOKARA-EVER CHAYNJ</button>
+      <button class="portal" role="listitem" data-title="LIFE OF COHERENCE VIRUS">LIFE OF COHERENCE VIRUS</button>
+
+      <!-- BLAKOKOD portal: circular + tooltip + archive -->
+      <button class="portal portal-button"
+              role="listitem"
+              data-title="BLAKOKOD OF AQUARIAN TRUST"
+              data-tip="THE BIBLE OF THE NEW AQUARIAN AGE"
+              data-archive="https://archive.org/details/boat-1-solutions/mode/2up">
+        BLAKOKOD OF AQUARIAN TRUST
+      </button>
+
+      <button class="portal" role="listitem" data-title="JOY-BLOOM">JOY-BLOOM</button>
+      <button class="portal" role="listitem" data-title="JIBBER-WIGGLE-SHIMMER-CLICK">JIBBER-WIGGLE-SHIMMER-CLICK</button>
+      <button class="portal" role="listitem" data-title="COHERENCE">COHERENCE</button>
+      <button class="portal" role="listitem" data-title="distortion">distortion</button>
+      <button class="portal" role="listitem" data-title="SOUL-SPIRIT">SOUL-SPIRIT</button>
+    </div>
+  </main>
+
+  <footer>INTEGRITY INTERDIMENSIONAL</footer>
+
+  <!-- TOC / STORY MODAL PLACEHOLDER -->
+  <div id="toc-root" aria-hidden="true"></div>
+
+  <!-- SCRIPT: parse BOAT1.md and show modal TOC -->
+  <script>
+  (function () {
+    const BMD = 'BOAT1.md';
+    let portalData = {};
+
+    function mdToHtml(md) {
+      const esc = md.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      let html = esc
+        .replace(/^###\s*(.*$)/gim, '<h4>$1</h4>')
+        .replace(/^##\s*(.*$)/gim, '<h3>$1</h3>')
+        .replace(/^#\s*(.*$)/gim, '<h2>$1</h2>')
+        .replace(/\n{2,}/g, '</p><p>');
+      html = '<p>' + html + '</p>';
+      html = html.replace(/<p>\s*<\/p>/g, '');
+      html = html.replace(/\n/g, '<br>');
+      return html;
+    }
+
+    function showPortalTOC(portalTitle, stories, archiveUrl) {
+      const root = document.getElementById('toc-root');
+      root.innerHTML = '';
+      root.setAttribute('aria-hidden','false');
+
+      const modal = document.createElement('div');
+      modal.className = 'toc-modal';
+      modal.setAttribute('role','dialog');
+      modal.setAttribute('aria-modal','true');
+      modal.innerHTML = `
+        <header class="toc-header">
+          <h2>${portalTitle}</h2>
+          <button class="toc-close" aria-label="Close">✕</button>
+        </header>
+        <div class="toc-body"></div>
+        <footer class="toc-footer"></footer>
+      `;
+      root.appendChild(modal);
+
+      const body = modal.querySelector('.toc-body');
+      const footer = modal.querySelector('.toc-footer');
+      const closeBtn = modal.querySelector('.toc-close');
+
+      if (archiveUrl) {
+        const a = document.createElement('a');
+        a.className = 'open-archive';
+        a.href = archiveUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'Open Sacred Book';
+        footer.appendChild(a);
+      }
+
+      if (!stories || stories.length === 0) {
+        body.innerHTML = '<p><em>No stories found for this portal.</em></p>';
+      } else {
+        const list = document.createElement('ol');
+        list.className = 'toc-list';
+        stories.forEach((s, i) => {
+          const li = document.createElement('li');
+          li.className = 'toc-item';
+          li.innerHTML = `<button class="toc-link" data-idx="${i}">${s.title || 'Untitled'}</button>`;
+          list.appendChild(li);
+        });
+        body.appendChild(list);
+
+        body.querySelectorAll('.toc-link').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const idx = +btn.getAttribute('data-idx');
+            body.innerHTML = `
+              <article class="story-article">
+                <h3>${stories[idx].title || 'Untitled'}</h3>
+                <div class="story-content">${mdToHtml(stories[idx].content || '')}</div>
+                <div style="margin-top:1rem"><button class="back-to-toc">Back to list</button></div>
+              </article>`;
+            const back = body.querySelector('.back-to-toc');
+            back.addEventListener('click', () => showPortalTOC(portalTitle, stories, archiveUrl));
+          });
+        });
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      function escHandler(e){ if(e.key==='Escape') closeModal(); }
+      document.addEventListener('keydown', escHandler);
+
+      function closeModal(){
+        document.removeEventListener('keydown', escHandler);
+        root.innerHTML = '';
+        root.setAttribute('aria-hidden','true');
+        const btn = Array.from(document.querySelectorAll('.portal')).find(b => b.dataset.title === portalTitle);
+        if(btn) btn.focus();
+      }
+
+      const first = modal.querySelector('.toc-link, .open-archive, .toc-close');
+      if(first) first.focus();
+    }
+
+    function parseBoatMarkdown(text){
+      const blocks = text.split(/\n-{3,}\n/);
+      const out = {};
+      blocks.forEach(block => {
+        const lines = block.split('\n');
+        let firstLineIndex = lines.findIndex(l => l.trim().length>0);
+        if(firstLineIndex === -1) return;
+        let portalHeading = lines[firstLineIndex].replace(/^#\s*/,'').trim();
+        if(!portalHeading) return;
+        const storyList = [];
+        let currentTitle = '';
+        let buffer = [];
+        for(let i = firstLineIndex+1; i < lines.length; i++){
+          const line = lines[i];
+          if(line.startsWith('## ')){
+            if(currentTitle) storyList.push({title: currentTitle.trim(), content: buffer.join('\n').trim()});
+            currentTitle = line.replace(/^##\s*/,'').trim();
+            buffer = [];
+          } else {
+            buffer.push(line);
+          }
+        }
+        if(currentTitle) storyList.push({title: currentTitle.trim(), content: buffer.join('\n').trim()});
+        if(storyList.length === 0){
+          const remainder = lines.slice(firstLineIndex+1).join('\n').trim();
+          if(remainder) storyList.push({title: portalHeading + ' — Entry', content: remainder});
+        }
+        out[portalHeading] = storyList;
+      });
+      return out;
+    }
+
+    fetch(BMD).then(r => {
+      if(!r.ok) { console.warn('BOAT1.md not found (HTTP ' + r.status + ')'); return {}; }
+      return r.text();
+    }).then(txt => {
+      portalData = parseBoatMarkdown(txt);
+      document.querySelectorAll('.portal').forEach(btn => {
+        const key = (btn.dataset.title || '').trim();
+        const found = portalData[key] || portalData[key.toUpperCase()] || portalData[key.toLowerCase()];
+        const archive = btn.dataset.archive || null;
+        if(found){
+          btn.addEventListener('click', () => showPortalTOC(key, found, archive));
+          btn.classList.add('has-content');
+        } else {
+          btn.addEventListener('click', () => showPortalTOC(key, [], archive));
+        }
+      });
+    }).catch(err => {
+      console.error('Error fetching BOAT1.md', err);
+      document.querySelectorAll('.portal').forEach(btn => {
+        const archive = btn.dataset.archive || null;
+        btn.addEventListener('click', () => showPortalTOC(btn.dataset.title || '', [], archive));
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
+
