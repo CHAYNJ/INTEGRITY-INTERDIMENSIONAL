@@ -231,3 +231,24 @@ footer { text-align:center; padding:26px 12px; color:#cfcfcf; font-size:13px; }
   from { transform: rotate(0deg) scale(1); }
   to   { transform: rotate(360deg) scale(1.15); }
 }
+/* ENABLE AQUARIAN TOOLTIP FOR PORTALS TOO */
+.portal[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,155,48,0.95);
+  color: #121212;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 999;
+  box-shadow: 0 0 12px rgba(255,155,48,0.45);
+  backdrop-filter: blur(4px);
+  animation: tooltipFade 0.16s ease-out;
+}
+
